@@ -183,7 +183,7 @@ export const fetchCategoryPageDetails = async(categoryId,dispatch) => {
     if(!response.data.success){
       throw new Error(response.data.message);
     }
-    console.log("FETCH_CATEGORY_PAGE_DETAILS_API_RESPONSE",response);
+    // console.log("FETCH_CATEGORY_PAGE_DETAILS_API_RESPONSE",response);
     selectedCategory = response.data.data;
   } catch (error) {
     console.log("FETCH_CATEGORY_PAGE_DETAILS_API_ERROR",error);
