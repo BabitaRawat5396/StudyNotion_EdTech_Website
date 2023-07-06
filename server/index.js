@@ -36,7 +36,7 @@ app.use(cookieParser());
 // using cors middleware for cross origin resource sharing between server port and frontend port
 app.use(
 	cors({
-		origin:"http://localhost:3000",
+		origin:"https://studynotion-edtech-website.vercel.app",
 		credentials:true,
 	})
 )
