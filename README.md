@@ -3,7 +3,7 @@ Welcome to StudyNotion !!!
 
 
 ## Getting Started
-To access StudyNotion, simply visit our website at [Visit website](https://studynotion-edtech-website.com) and create an account. Once registered, you can explore our diverse range of courses, enroll in subjects that interest you, and embark on an enriching learning journey.
+To access StudyNotion, simply visit our website at [Visit website](https://studynotion-edtech-website.vercel.app/) and create an account. Once registered, you can explore our diverse range of courses, enroll in subjects that interest you, and embark on an enriching learning journey.
 
 
 ## Development
