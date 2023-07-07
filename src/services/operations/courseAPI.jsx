@@ -26,6 +26,7 @@ export function createCourse(courseData,token){
   return async(dispatch) => {
     
     dispatch(setLoading(true));
+    console.log("courseData",courseData);
     try {
       const response = await apiConnector("POST",CREATE_COURSE_API,courseData,{
         "Content-Type": "multipart/form-data",

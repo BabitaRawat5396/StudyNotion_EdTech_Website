@@ -23,7 +23,19 @@ exports.createCourse = async(req,res) => {
 			status,
 			instructions,
 		} = req.body;
-
+        return res.status(400).json({
+            success:false,
+            error:{
+                courseName,
+                courseDescription,
+                whatYouWillLearn,
+                price,
+                tag,
+                category,
+                status,
+                instructions,
+            }
+        });
         // fetch thumbnail from cloudinary files
         const thumbnail = req.files.thumbnailImage;
         
