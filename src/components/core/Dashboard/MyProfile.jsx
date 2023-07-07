@@ -26,7 +26,7 @@ const MyProfile = () => {
                     <CommonButton
                         linkto={"/dashboard/settings"}
                         // eslint-disable-next-line
-                        style={"bg-yellow-50 text-richblack-900 "}
+                        customStyle={"bg-yellow-50 text-richblack-900 "}
                         icon="MdEditDocument"
                     >
                         Edit
@@ -47,7 +47,7 @@ const MyProfile = () => {
                     <CommonButton
                         linkto={"/dashboard/settings"}
                         // eslint-disable-next-line
-                        style={"bg-yellow-50 text-richblack-900 "}
+                        customStyle={"bg-yellow-50 text-richblack-900 "}
                         icon="MdEditDocument"
                     >
                         Edit
@@ -121,7 +121,7 @@ const MyProfile = () => {
                     <CommonButton
                         linkto={"/dashboard/settings"}
                         // eslint-disable-next-line
-                        style={"bg-yellow-50 text-richblack-900 "}
+                        customStyle={"bg-yellow-50 text-richblack-900 "}
                         icon="MdEditDocument"
                     >
                         Edit

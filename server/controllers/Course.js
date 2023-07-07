@@ -23,14 +23,14 @@ exports.createCourse = async(req,res) => {
 			status,
 			instructions,
 		} = req.body;
+
         // fetch thumbnail from cloudinary files
         const thumbnail = req.files.thumbnailImage;
-        
         
         // Parse the instructions and tags to have string into an array of string
         instructions = JSON.parse(instructions);
         tag = JSON.parse(tag);
-        console.log("1");
+
         // Check if any of the required fields are missing
 		if (
 			!courseName ||
@@ -50,11 +50,9 @@ exports.createCourse = async(req,res) => {
         if (!status || status === undefined) {
 			status = "Draft";
 		}
-        console.log("1");
-        console.log("process.env.FOLDER_NAME",process.env.FOLDER_NAME)
+
         //Upload Image top Cloudinary
         const thumbnailImage = await fileUploadToCloudinary(thumbnail, process.env.FOLDER_NAME);
-        console.log("thumbnailImage",thumbnailImage)
         
         if(!thumbnailImage){
             return res.status(400).json({
@@ -62,8 +60,6 @@ exports.createCourse = async(req,res) => {
 				message: "thumbnail couldn't uploaded",
 			});
         }
-        console.log("1");
-
         // check if category is valid or not (it for if externally using postman user has entered tag that nt present) 
         const categoryDetails = await Category.findById(category);
         
@@ -73,7 +69,6 @@ exports.createCourse = async(req,res) => {
 				message: "Category Details Not Found",
 			});
         }
-        console.log("1");
 
 
         // Create a new course with the given details
@@ -96,9 +91,6 @@ exports.createCourse = async(req,res) => {
 				message: "Couldn't create courses",
 			});
         }
-
-        console.log("1");
-
         // update category schema with newly created course
         const updatedCategory = await Category.findByIdAndUpdate(category,
             {
@@ -114,8 +106,6 @@ exports.createCourse = async(req,res) => {
 				message: "Couldn't update category after creating course",
 			});
         }
-        console.log("1");
-
         // save this course in instructor(user schema) courses details as for instructor all the courses will be shown that he/she created while in student only those will be added to course list which they have bought
         const updatedUser = await User.findByIdAndUpdate({_id:req.user.id},
                                         {
@@ -125,13 +115,12 @@ exports.createCourse = async(req,res) => {
                                         },
                                         {new:true}
                                 );
-        if(!updatedUser){
+        if(!updatedCategory){
             return res.status(404).json({
                 success: false,
-                message: "Couldn't update user after creating course",
-            });
-        }
-        console.log("1");
+                message: "Couldn't update category after creating course",
+                });
+            }
         // Return the new course and a success message
 		res.status(200).json({
 			success: true,

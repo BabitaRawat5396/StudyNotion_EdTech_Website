@@ -17,7 +17,7 @@ export default function Cart() {
                 <RenderCartCourses />
                 <RenderTotalAmount />
             </div>)
-            : (<p className=" text-4xl text-yellow-400 text-center mt-4">Your Cart is Empty</p>)}
+            : (<p className="lg:text-4xl text-yellow-400 text-center mt-4">Your Cart is Empty</p>)}
         </div>
     )
 }

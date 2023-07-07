@@ -1,14 +1,14 @@
-import { Link, matchPath, useLocation } from 'react-router-dom'
-import {AiOutlineShoppingCart} from 'react-icons/ai'
-import {IoIosArrowDropdownCircle}  from 'react-icons/io'
-import {NavbarLinks} from '../../data/navbar-links';
-import { useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { Link, matchPath, useLocation } from 'react-router-dom';
 import { apiConnector } from '../../services/apiConnector';
-import { categories } from '../../services/apis';
-import logo from '../../assets/Logo/Logo-Full-Light.png'
 import ProfileDropdown from '../core/Auth/ProfileDropDown';
+import {IoIosArrowDropdownCircle}  from 'react-icons/io';
+import logo from '../../assets/Logo/Logo-Full-Light.png';
+import {AiOutlineShoppingCart} from 'react-icons/ai';
 import { ACCOUNT_TYPE } from '../../utils/constants';
+import {NavbarLinks} from '../../data/navbar-links';
+import { categories } from '../../services/apis';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 
 const NavBar = () => {
