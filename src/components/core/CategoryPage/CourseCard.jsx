@@ -27,7 +27,7 @@ const CourseCard = ({course,customStyle}) => {
       course && 
       <Link  to={`/courses/${course._id}`}>
         <div className="flex flex-col gap-5">
-          <img src={course?.thumbnail} alt={`${course?.courseName}`} className=" h-52 object-fit aspect-square w-96 rounded-xl"/>
+          <img src={course?.thumbnail} alt={`${course?.courseName}`} className=" h-[10rem] object-fit aspect-square w-96 rounded-xl"/>
           <div className="flex flex-col gap-2">
             <h1 className=" text-xl text-blue-300 font-semibold">{course.courseName}</h1>
             <p className="text-richblack-100 text-sm">Instructor : {course?.instructor?.firstName} {course?.instructor?.lastName}</p>
