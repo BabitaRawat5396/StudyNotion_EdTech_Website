@@ -32,10 +32,11 @@ export function createCourse(courseData,token){
         "Content-Type": "multipart/form-data",
         Authorization:`Bearer ${token}`
       });
-
+    console.log("courseData",courseData);
       if(!response.data.success){
         throw new Error(response.data.message);
       }
+      console.log("courseData",courseData);
 
       // console.log("CREATE_COURSE_API_RESPONSE",response);
       // toast.success("Course Created Successfully");
