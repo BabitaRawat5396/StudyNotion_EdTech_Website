@@ -23,6 +23,9 @@ exports.createCourse = async(req,res) => {
 			status,
 			instructions,
 		} = req.body;
+        // fetch thumbnail from cloudinary files
+        const thumbnail = req.files.thumbnailImage;
+
         return res.status(400).json({
             success:false,
             error:{
@@ -34,10 +37,10 @@ exports.createCourse = async(req,res) => {
                 category,
                 status,
                 instructions,
+                thumbnail
             }
         });
-        // fetch thumbnail from cloudinary files
-        const thumbnail = req.files.thumbnailImage;
+        
         
         // Parse the instructions and tags to have string into an array of string
         instructions = JSON.parse(instructions);
