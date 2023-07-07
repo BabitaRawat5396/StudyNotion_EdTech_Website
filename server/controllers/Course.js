@@ -51,9 +51,10 @@ exports.createCourse = async(req,res) => {
 			status = "Draft";
 		}
         console.log("1");
-
+        console.log("process.env.FOLDER_NAME",process.env.FOLDER_NAME)
         //Upload Image top Cloudinary
         const thumbnailImage = await fileUploadToCloudinary(thumbnail, process.env.FOLDER_NAME);
+        console.log("thumbnailImage",thumbnailImage)
         
         if(!thumbnailImage){
             return res.status(400).json({
