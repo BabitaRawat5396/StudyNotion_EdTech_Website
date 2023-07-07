@@ -239,7 +239,7 @@ const Home = () => {
         
         {/* rombus frame Section*/}
         <div className="homepage_bg h-80 w-full"> 
-          <div className="flex gap-6 py-32 mx-auto justify-center items-center">
+          <div className="flex gap-6 py-32 mx-auto justify-center items-center w-11/12">
             <CommonButton
               customStyle={"bg-yellow-50 text-richblack-900"}
               icon={"MdArrowForward"}
