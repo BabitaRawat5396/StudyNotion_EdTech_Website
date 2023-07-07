@@ -1,9 +1,9 @@
 
 import { Link } from 'react-router-dom';
 import {IoIosArrowDropdownCircle} from 'react-icons/io';
-import { NavbarLinks } from '../../../data/navbar-links';
+import { NavbarLinks } from '../../../../data/navbar-links';
 import {GiCrossMark } from 'react-icons/gi';
-import SidebarList  from '../Dashboard/SidebarLink'
+import SidebarList from '../../Dashboard/SidebarLink'
 
 const SideBarHome = ({subLinks,showSideBar,setShowSideBar}) => {
  

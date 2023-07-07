@@ -8,8 +8,8 @@ import { categories } from '../../services/apis';
 import logo from '../../assets/Logo/Logo-Full-Light.png'
 import ProfileDropdown from '../core/Auth/ProfileDropDown';
 import { ACCOUNT_TYPE } from '../../utils/constants';
-import MobileAppearance from '../core/NavBar/MobileAppearance';
-import NavLinks from '../core/NavBar/Desktop/NavLinks';
+import MobileAppearance from '../core/NavBarAppearance/Mobile/MobileAppearance';
+import NavLinks from '../core/NavBarAppearance/Desktop/NavLinks';
 
 const NavBar = () => {
 
