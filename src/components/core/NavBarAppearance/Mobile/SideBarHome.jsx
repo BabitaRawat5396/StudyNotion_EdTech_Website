@@ -10,7 +10,7 @@ const SideBarHome = ({subLinks,showSideBar,setShowSideBar}) => {
   const [showCategories,setShowCategories] =useState(false);
 
   return (
-    <div className={`fixed flex flex-col overflow-y-auto top-0 z-10 w-[64%] left-0 min-h-screen bg-richblack-800 transition-transform duration-300 ${showSideBar ? 'translate-x-0' : '-translate-x-full'}`}>
+    <div className={`fixed flex flex-col overflow-y-auto top-0 z-40 w-[64%] left-0 min-h-screen bg-richblack-800 transition-transform duration-300 ${showSideBar ? 'translate-x-0' : '-translate-x-full'}`}>
       <GiCrossMark
         className='text-2xl ml-48 mt-5 mb-3'
         onClick={() => {
