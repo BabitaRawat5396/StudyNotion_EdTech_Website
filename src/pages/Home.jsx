@@ -19,7 +19,10 @@ import { getAllRatingsReview } from "../services/operations/ratingsReviewAPI";
 const Home = () => {
 
   const [reviewData,setReviewData] = useState(null);
-
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
   useEffect( () => {
     const getReviewsRating = async() => {
       const res = await getAllRatingsReview();
@@ -27,11 +30,27 @@ const Home = () => {
     }
     getReviewsRating();
   },[]);
+  useEffect(() => {
+    // Function to update window size
+    const updateWindowSize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
 
+    // Event listener for window resize
+    window.addEventListener('resize', updateWindowSize);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener('resize', updateWindowSize);
+    };
+  }, []);
   return (
     <>
       {/* Section1 */}
-      <div className="relative mx-auto flex flex-col gap-8 items-center h-1/4 py-14 px-20 bg-richblack-900"> 
+      <div className="relative mx-auto flex flex-col gap-8 items-center h-1/4 py-14 px-4 sm:px-20 bg-richblack-900"> 
         
         {/* Video Section */}
         <div className="flex flex-col w-11/12 gap-8 justify-center md:items-center ">          
@@ -308,7 +327,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <ReviewSection reviewData={reviewData}/>
+      <ReviewSection reviewData={reviewData} windowSize={windowSize}/>
       {/* Section4 */}
       <Footer/>
     </>

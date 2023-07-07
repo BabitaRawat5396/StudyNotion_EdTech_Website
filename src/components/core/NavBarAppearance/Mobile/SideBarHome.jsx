@@ -28,7 +28,7 @@ const SideBarHome = ({subLinks,showSideBar,setShowSideBar}) => {
               }
               {
                 index === 1 && (
-                  <details>
+                  <div>
                     <div 
                       onClick={() => setShowCategories((prev) => !prev)}
                       className='text-richblack-300 flex items-center gap-3 w-full px-2 md:px-5 py-2'>
@@ -51,7 +51,7 @@ const SideBarHome = ({subLinks,showSideBar,setShowSideBar}) => {
                       ))
                     }
                     </div>
-                  </details>
+                  </div>
                 )
               }
             </div>

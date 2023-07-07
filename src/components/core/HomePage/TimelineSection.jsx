@@ -36,11 +36,11 @@ const TimelineSection = () => {
             <div className='flex flex-col lg:w-[45%] gap-5'>
                 {
                     timeline.map( (element,index) => {
-                        return <div key={index} className='relative flex gap-6'>
+                        return <div key={index} className='relative flex gap-3 sm:gap-6'>
                                     <div className=' bg-white rounded-full h-10 w-10 flex items-center justify-center drop-shadow-2xl shadow-xl shadow-richblack-50'>
                                         <img src={element.logo} alt="logo" className=''/>
                                     </div>
-                                    <div className={`${index === 3 ? "absolute" : "absolute top-[3.35rem] left-[0.35rem] first-letter:rem] border border-dotted border-richblack-100 w-7 h-px rotate-90"}`}></div>
+                                    <div className={` hidden sm:visible ${index === 3 ? "absolute" : "absolute top-[3.3rem] left-[0.26rem] sm:top-[3.35rem] sm:left-[0.35rem] border border-dotted border-richblack-100 w-7 h-px rotate-90"}`}></div>
 
                                     <div className='flex flex-col'>
                                         <h1 className='font-semibold text-richblack-800 text-base'>{element.title}</h1>
@@ -63,14 +63,14 @@ const TimelineSection = () => {
                     }
                 ></div>
             </div>
-            <div className='flex p-6 md:p-10 absolute -bottom-14 md:right-14 md:-bottom-16 z-[2] bg-caribbeangreen-700 w-80 h-24 md:w-[26rem] md:h-[7rem] text-caribbeangreen-300' >
-                <div className='flex gap-2 md:gap-4 border-r border-caribbeangreen-500 px-1 md:px-2'>
-                    <h1 className='font-bold text-2xl md:text-4xl text-white'>10</h1>
-                    <p className='text-sm leading-5'>YEARS EXPERIENCE </p>
+            <div className=' w-[90%] h-[15%] flex px-6 py-2 sm:p-6 md:p-10 absolute -bottom-14 md:right-14 md:-bottom-16 z-[2] bg-caribbeangreen-700 sm:w-80 sm:h-24 md:w-[26rem] md:h-[7rem] text-caribbeangreen-300' >
+                <div className='flex flex-col sm:flex-row sm:gap-2 md:gap-4 border-r border-caribbeangreen-500 px-1 md:px-2'>
+                    <h1 className='font-bold text-lg sm:text-2xl md:text-4xl text-white'>10</h1>
+                    <p className=' text-xs sm:text-sm leading-5'>YEARS EXPERIENCE </p>
                 </div>
-                <div className='flex gap-2 md:gap-4 px-4 md:px-6'>
-                    <h1 className='font-bold text-2xl md:text-3xl text-white'>250</h1>
-                    <p className='text-sm leading-5'>TYPES OF COURSES</p>
+                <div className='flex flex-col sm:flex-row sm:gap-2 md:gap-4 px-4 md:px-6'>
+                    <h1 className='font-bold text-lg sm:text-2xl md:text-3xl text-white'>250</h1>
+                    <p className=' text-xs sm:text-sm  leading-5'>TYPES OF COURSES</p>
                 </div>
             </div>
         </div>

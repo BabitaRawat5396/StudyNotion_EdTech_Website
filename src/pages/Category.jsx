@@ -83,7 +83,7 @@ const Category = () => {
 
                 {/* Section one which toggle btw Most Popular, trending, new*/}
                 <div className='px-14 py-8 flex flex-col gap-5'>
-                  <h1 className='text-4xl text-richblue-400 px-1'>Courses to get you started</h1>
+                  <h1 className=' text-3xl sm:text-4xl text-richblue-400 px-1'>Courses to get you started</h1>
                   <div className="flex gap-5 border-b border-richblue-600 px-3">
                     {options.map((option, index) => (
                       <p
@@ -105,18 +105,18 @@ const Category = () => {
                 }
 
                 {/* Section for top courses */}
-                <h1 className='mx-14 px-4 pb-3 pt-8 text-4xl text-richblue-400 border-b-2 border-blue-700'>Explore More Courses</h1>
+                <h1 className=' text-3xl sm:text-4xl mx-14 px-4 pb-3 pt-8 text-richblue-400 border-b-2 border-blue-700'>Explore More Courses</h1>
                 {
                   categoryCourses && 
                     <CourseSlider courses={categoryCourses?.differentCourses}/>
                 }
                 
                 {/* Section for frequently bought */}
-                <h1 className='mx-14 px-4 pb-3 pt-8 text-4xl text-richblue-400 border-b-2 border-blue-700'>Frequently Bought Together</h1>
+                <h1 className='mx-14 px-4 pb-3 pt-8 text-3xl sm:text-4xl text-richblue-400 border-b-2 border-blue-700'>Frequently Bought Together</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-16 gap-8'>
                 {
                   categoryCourses?.mostSellingCourses?.slice(0,6).map((course, index) => (
-                    <CourseCard course={course} key={index} customStyle={"lg:h-96 lg:w-[23rem]"}/>
+                    <CourseCard course={course} key={index} customStyle={" lg:h-96 lg:w-[23rem]"}/>
                   ))
                 }
                 </div>  

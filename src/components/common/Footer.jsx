@@ -21,7 +21,7 @@ const Community = ["Forums", "Chapters", "Events"];
 const Footer = () => {
   return (
     <div className="bg-richblack-800">
-      <div className="flex lg:flex-row gap-8 items-center justify-between w-10/12 lg:w-11/12 max-w-maxContent
+      <div className="flex lg:flex-row gap-8 items-center sm:justify-between w-10/12 lg:w-11/12 max-w-maxContent
         text-richblack-400 leading-6 mx-auto relative pt-14 pb-4">
         <div className="border-b w-[100%] flex flex-col lg:flex-row pb-5 border-richblack-700">
           {/* Section 1 */}
@@ -102,26 +102,26 @@ const Footer = () => {
                 </div>
               </div>
               
-              <div>
-              <h1 className="text-richblack-50 font-semibold text-[16px] lg:mt-7">
-                Community
-              </h1>
+              {/* <div >
+                <h1 className="text-richblack-50 font-semibold text-[16px] lg:mt-7">
+                  Community
+                </h1>
 
-              <div className="flex flex-col gap-2 mt-2">
-                {Community.map((ele, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
-                    >
-                      <Link to={ele.split(" ").join("-").toLowerCase()}>
-                        {ele}
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-              </div>
+                <div className="flex flex-col gap-2 mt-2">
+                  {Community.map((ele, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="text-[14px] cursor-pointer hover:text-richblack-50 transition-all duration-200"
+                      >
+                        <Link to={ele.split(" ").join("-").toLowerCase()}>
+                          {ele}
+                        </Link>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div> */}
               
             </div>
           </div>

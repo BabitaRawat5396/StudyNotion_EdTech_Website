@@ -6,10 +6,10 @@ const ExploreMore = () => {
 
     const tabsName = [
         "Free",
-        "Most popular",
-        "New to coding",
-        "Skills paths",
-        "Career paths",
+        "Popular",
+        "Coding",
+        "Skills",
+        "Career",
     ];
 
 
@@ -32,7 +32,7 @@ const ExploreMore = () => {
                 tabsName.map( (element, index) => {
                     return (
                         <div
-                            className={` text-[0.7rem] sm:text-xs lg:text-base flex flex-row items-center gap-2 
+                            className={` whitespace-nowrap text-[0.7rem] sm:text-xs lg:text-base flex flex-row items-center gap-2 
                                 ${currentTab === element ? "bg-richblack-900 text-richblack-5 font-medium" : "text-richblack-200" } 
                                 rounded-full transition-all duration-200 cursor-pointer
                                 hover:bg-richblack-700 hover:text-richblack-5 px-[0.5rem] py-[0.2rem] md:px-1 md:py-2 lg:px-7 lg:py-2`}

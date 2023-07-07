@@ -17,7 +17,7 @@ const LearningLanguageSection = () => {
                 }
                 body={
                     {
-                        style:"text-richblack-900 text-center w-[82%]",
+                        style:"text-richblack-900 sm:text-center w-[82%]",
                         content:["Using spin making learning multiple languages easy. with 20+ languages realistic voice-over, progress tracking, custom schedule and more."]
                     }
                 }

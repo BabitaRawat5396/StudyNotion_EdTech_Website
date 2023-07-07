@@ -41,13 +41,13 @@ const CodeBlocks = ({
                 <CommonButton 
                     icon={button1.icon} 
                     linkto={button1.linkto}
-                    style={button1.style}
+                    customStyle={button1.style}
                 >
                     {button1.content}
                 </CommonButton>
                 <CommonButton 
                     linkto={button2.linkto}
-                    style={button2.style}
+                    customStyle={button2.style}
                 >
                     {button2.content}
                 </CommonButton>
