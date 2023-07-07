@@ -35,7 +35,7 @@ const ReviewSlider = ({reviewData,windowSize}) => {
       }}
       slidesPerView={1}
       modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-      className="mySwiper"
+      className="mySwiper w-full"
       >
       {
         reviewData ? (

@@ -37,7 +37,7 @@ const CodeBlocks = ({
                 }
                 highlighttext={highlighttext}
             />
-            <div className='flex gap-10 mt-10'>
+            <div className='flex gap-5 sm:gap-10 mt-10 border'>
                 <CommonButton 
                     icon={button1.icon} 
                     linkto={button1.linkto}
