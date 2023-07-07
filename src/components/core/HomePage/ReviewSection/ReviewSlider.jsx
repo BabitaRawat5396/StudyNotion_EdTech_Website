@@ -12,7 +12,7 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
 import ReviewCard from "./ReviewCard";
 
 
-const ReviewSlider = ({reviewData}) => {
+const ReviewSlider = ({reviewData,windowSize}) => {
   
   return (
     <Swiper 
@@ -42,7 +42,7 @@ const ReviewSlider = ({reviewData}) => {
           reviewData?.map( (item,index) => (
             item && (
                 <SwiperSlide key={index}>
-                  <ReviewCard item={item}/>
+                  <ReviewCard item={item} windowSize={windowSize}/>
                 </SwiperSlide>
               )          
           ))
