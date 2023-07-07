@@ -2,7 +2,7 @@
 import HighlightText from "../../../common/HighlightText";
 import ReviewSlider from "./ReviewSlider";
 
-const ReviewSection = ({reviewData}) => {
+const ReviewSection = ({reviewData,windowSize}) => {
   
   
   return (
@@ -17,7 +17,7 @@ const ReviewSection = ({reviewData}) => {
               />
               from other learners
             </h1>
-            <ReviewSlider reviewData={reviewData}/>
+            <ReviewSlider reviewData={reviewData} windowSize={windowSize}/>
           </div>
         )
       }
