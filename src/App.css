@@ -417,7 +417,7 @@ body,html{
 }
 
 .social-btn:hover {
-  width: 30rem;
+  width: 22rem;
   border-radius: 5px;
 }
 
@@ -430,4 +430,3 @@ body,html{
   opacity: 1;
 }
 
-/* -------------- */

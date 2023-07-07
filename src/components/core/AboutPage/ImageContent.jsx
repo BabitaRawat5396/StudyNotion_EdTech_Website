@@ -25,7 +25,7 @@ const imagesContent = [
 const ImageContent = () => {
 
   return (
-    <div className='w-10/12 lg:absolute lg:-top-[15rem] py-14 lg:py-0'>
+    <div className='sm:w-10/12 lg:absolute lg:-top-[15rem] py-14 lg:py-0'>
       <div className='flex flex-col lg:flex-row'>
       {
         imagesContent.map((content,index) => (  
@@ -37,7 +37,7 @@ const ImageContent = () => {
                 ${index === 0 ? " from-yellow-400 via-red-500 to-pink-500 " : index === 1 ? "from-[#1FA2FF] via-[#12D8FA] to-[#A6FFCB]" : "from-[#ec7f0a] via-[#ec800a] to-[#ec810b]"}`}>
                 {content.title}
               </h1>
-              <p className='text-richblack-600 px-4 font-semibold'>{content.description}</p>
+              <p className='text-richblack-600 px-4 font-semibold text-sm'>{content.description}</p>
             </div>
           </div>
         ))

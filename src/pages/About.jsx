@@ -1,12 +1,10 @@
 import HeadingContent from "../components/common/HeadingContent"
-import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import CommonButton from "../components/common/CommonButton";
 import {aboutUsCard} from '../data/about-us-card'
 import MessageForm from "../components/core/AboutPage/MessageForm";
 import Footer from "../components/common/Footer";
 import aboutVideo from '../assets/Videos/aboutVideo.mp4'
 import ImageContent from "../components/core/AboutPage/ImageContent";
-
 
 const AboutUs = () => {
     
@@ -16,58 +14,51 @@ const AboutUs = () => {
         <div className=' w-full h-1/4 bg-richblack-900 mx-auto flex flex-col gap-8 items-center'>
 
             {/* Video display */}
-            <div className="container md:pb-60">
-
-                <section>
-                    <div className="video">
-                        <video src={aboutVideo} muted autoPlay loop className="video"></video>
+            <div className="container md:pb-60 relative">
+                <section className="relative">
+                    <div className="video absolute top-0 left-0 w-full h-full">
+                    <video src={aboutVideo} muted autoPlay loop className="w-full h-full object-cover"></video>
                     </div>
-                    <div className="stuff lg:h-[30rem]" data-type="content">
-                        <div className="relative text-center text-richblue-600">
-                            <FaQuoteLeft className="absolute -left-2 lg:-left-7 lg:-top-2 text-base lg:text-2xl"/>
-                            <p className=" lg:text-4xl font-semibold ">
-                                We are passionate about revolutionizing the way we learn. Our innovative platform combines technology, expertise, and community to create an unparalleled educational experience.
-                            </p>
-                            <FaQuoteRight className="absolute bottom-1 right-20 lg:right-[6.4rem] lg:bottom-3 text-base lg:text-2xl"/>
-                        </div>
+                    <div className="stuff lg:h-[30rem] flex flex-col justify-center items-center text-center text-richblue-600 relative">
+                    <p className="lg:text-4xl text-richblue-600 font-semibold">
+                    ❝ We are passionate about revolutionizing the way we learn. Our innovative platform combines technology, expertise, and community to create an unparalleled educational experience.❞
+                    </p>
                     </div>
                 </section>
 
-                <div className="flex flex-col w-8/12 md:11/12 lg:w-11/12 gap-16 justify-center md:items-center py-20 lg:py-20">
+                <div className="flex flex-col w-8/12 md:11/12 lg:w-11/12 gap-16 justify-center items-center py-20 lg:py-20 relative z-10">
                     <HeadingContent
-                        styleHeadingContent="flex-col justify-center items-center"
-                        heading={
-                        {
-                            style:"text-richblack-5 md:text-center lg:w-6/12 lg:mb-7",
-                            content:["Driving Innovation in Online Education for a"]
-                        }
-                        }
-                        body={
-                        {
-                            style:"text-richblack-300 md:text-center lg:w-[69%]",
-                            content:"Studynotion is at the forefront of driving innovation in online education. We're passionate about creating a brighter future by offering cutting-edge courses, leveraging emerging technologies, and nurturing a vibrant learning community."
-                        }
-                        }
-                        highlighttext=" Brighter Future"
+                    styleHeadingContent="flex-col justify-center items-center"
+                    heading={{
+                        style: "text-richblack-5 md:text-center lg:w-6/12 lg:mb-7",
+                        content: ["Driving Innovation in Online Education for a"],
+                    }}
+                    body={{
+                        style: "text-richblack-300 md:text-center lg:w-[69%]",
+                        content:
+                        "Studynotion is at the forefront of driving innovation in online education. We're passionate about creating a brighter future by offering cutting-edge courses, leveraging emerging technologies, and nurturing a vibrant learning community.",
+                    }}
+                    highlighttext=" Brighter Future"
                     />
                 </div>
             </div>
+
             <div className=" relative w-full bg-richblack-800 flex flex-col lg:flex-row justify-center items-center">
                 <ImageContent/>
-                <div className=" h-36 w-full flex items-center p-14 lg:pt-36 lg:p-28">
+                <div className=" h-36 w-full flex items-center px-4 sm:p-14 lg:pt-36 lg:p-28">
                     <div className=" flex flex-col lg:gap-2 w-1/4 text-center border-r border-richblack-400 lg:pr-20">
                         <h1 className="text-richblack-5 text-xl lg:text-3xl font-semibold">5K</h1>
                         <p className="text-richblack-300 text-sm lg:text-base">Active Students</p>
                     </div>
-                    <div className=" flex flex-col gap-2 w-1/4 border-r border-richblack-400 pl-12 lg:pr-20 lg:pl-20">
+                    <div className=" flex flex-col gap-2 w-1/4 border-r border-richblack-400 pl-4 sm:pl-12 lg:pr-20 lg:pl-20">
                         <h1 className="text-richblack-5 text-xl lg:text-3xl font-semibold ">10+</h1>
                         <p className="text-richblack-300 text-sm lg:text-base">Mentors</p>
                     </div>
-                    <div className=" flex flex-col gap-2 w-1/4 border-r border-richblack-400 pl-12 lg:pr-20 lg:pl-20">
+                    <div className=" flex flex-col gap-2 w-1/4 border-r border-richblack-400 pl-4 sm:pl-12 lg:pr-20 lg:pl-20">
                         <h1 className="text-richblack-5 text-xl lg:text-3xl font-semibold">200+</h1>
                         <p className="text-richblack-300 text-sm lg:text-base">Courses</p>
                     </div>
-                    <div className=" flex flex-col gap-2 w-1/4 pl-12 lg:pl-20">
+                    <div className=" flex flex-col gap-2 w-1/4 sm:pl-12 pl-4 lg:pl-20">
                         <h1 className="text-richblack-5 text-xl lg:text-3xl font-semibold">50+</h1>
                         <p className="text-richblack-300 text-sm lg:text-base">Awards</p>
                     </div>
@@ -105,7 +96,7 @@ const AboutUs = () => {
                         Learn More
                     </CommonButton>
                 </div>
-                <div className="md:absolute z[-1] top-28 -right-2 lg:top-20 lg:right-8 grid grid-cols-2 grid-rows-3 md:grid-cols-2 md:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2">
+                <div className="md:absolute px-7 z[-1] top-28 -right-2 lg:top-20 lg:right-8 grid grid-cols-1 grid-rows-6 sm:grid-cols-2 sm:grid-rows-3 md:grid-cols-2 md:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2">
                     {
                         aboutUsCard.map( (card,index) => (
                             <div key={index} className={`${(index%2 === 1) ? "bg-richblack-700" : "bg-richblack-800"} lg:h-72 w-72 p-4 lg:p-8 ${index === 0 ? "bg-richblack-900" : ""} `}>

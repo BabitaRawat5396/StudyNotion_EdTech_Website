@@ -28,8 +28,8 @@ const contact = [
 const Contact = () => {
   return (
     <>
-        <div className='text-richblack-50 flex flex-col lg:flex-row p-20 gap-20 items-center lg:items-start'>
-            <div className='flex flex-col items-center gap-5 rounded-lg h-96 w-[450px] bg-richblack-800 p-10'>
+        <div className='text-richblack-50 mx-auto flex flex-col lg:flex-row p-7 sm:p-20 gap-20 items-center lg:items-start'>
+            <div className='flex flex-col items-center gap-5 rounded-lg h-96 sm:w-[450px] bg-richblack-800 p-10'>
             {
                 contact.map ( (element,index) => (
                     <div className='flex gap-3 w-full' key={index}>
@@ -44,7 +44,7 @@ const Contact = () => {
             }
             </div>
             <div className='border rounded-lg border-richblack-600'>
-                <div className='px-16 pt-10'>
+                <div className='px-4 sm:px-16 pt-10'>
                     <h1 className='text-richblack-5 text-4xl pb-4'>
                         Got a Idea? We’ve got the skills. Let’s team up
                     </h1>
