@@ -4,9 +4,10 @@ import {IoIosArrowDropdownCircle} from 'react-icons/io';
 import { NavbarLinks } from '../../../../data/navbar-links';
 import {GiCrossMark } from 'react-icons/gi';
 import SidebarList from '../../Dashboard/SidebarLink'
+import { useState } from 'react';
 
 const SideBarHome = ({subLinks,showSideBar,setShowSideBar}) => {
- 
+  const [showCategories,setShowCategories] =useState(false);
 
   return (
     <div className={`fixed flex flex-col overflow-y-auto top-0 z-10 w-[64%] left-0 min-h-screen bg-richblack-800 transition-transform duration-300 ${showSideBar ? 'translate-x-0' : '-translate-x-full'}`}>
@@ -28,12 +29,15 @@ const SideBarHome = ({subLinks,showSideBar,setShowSideBar}) => {
               {
                 index === 1 && (
                   <details>
-                    <summary className='text-richblack-300 flex items-center gap-3 w-full px-2 md:px-5 py-2'>
+                    <div 
+                      onClick={() => setShowCategories((prev) => !prev)}
+                      className='text-richblack-300 flex items-center gap-3 w-full px-2 md:px-5 py-2'>
                       <p>Catalog</p>
                       <IoIosArrowDropdownCircle/>
-                    </summary>
+                    </div>
                     <div>
                     {
+                      showCategories && 
                       subLinks.map((subLink, index) => (
                         <Link 
                           to={`/catalog/${subLink?.name.split(" ").join("-").toLowerCase()}`} 
