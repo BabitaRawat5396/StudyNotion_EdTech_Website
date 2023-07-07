@@ -39,7 +39,8 @@ exports.createCourse = async(req,res) => {
 			!price ||
 			!tag ||
 			!thumbnail ||
-			!category
+			!category ||
+            !instructions
 		) {
 			return res.status(400).json({
 				success: false,
@@ -53,6 +54,12 @@ exports.createCourse = async(req,res) => {
         //Upload Image top Cloudinary
         const thumbnailImage = await fileUploadToCloudinary(thumbnail, process.env.FOLDER_NAME);
         
+        if(!thumbnailImage){
+            return res.status(400).json({
+				success: false,
+				message: "thumbnail couldn't uploaded",
+			});
+        }
         // check if category is valid or not (it for if externally using postman user has entered tag that nt present) 
         const categoryDetails = await Category.findById(category);
         
@@ -78,8 +85,14 @@ exports.createCourse = async(req,res) => {
 			instructions: instructions,
 		});
 
+        if(!newCourse){
+            return res.status(404).json({
+				success: false,
+				message: "Couldn't create courses",
+			});
+        }
         // update category schema with newly created course
-        await Category.findByIdAndUpdate(category,
+        const updatedCategory = await Category.findByIdAndUpdate(category,
             {
                 $push:{
                     courses:newCourse._id,
@@ -87,9 +100,14 @@ exports.createCourse = async(req,res) => {
             },
             {new:true}
         )
-
+        if(!updatedCategory){
+            return res.status(404).json({
+				success: false,
+				message: "Couldn't update category after creating course",
+			});
+        }
         // save this course in instructor(user schema) courses details as for instructor all the courses will be shown that he/she created while in student only those will be added to course list which they have bought
-        await User.findByIdAndUpdate({_id:req.user.id},
+        const updatedUser = await User.findByIdAndUpdate({_id:req.user.id},
                                         {
                                             $push: {
                                                 courses: newCourse._id,
@@ -97,6 +115,12 @@ exports.createCourse = async(req,res) => {
                                         },
                                         {new:true}
                                 );
+        if(!updatedUser){
+            return res.status(404).json({
+                success: false,
+                message: "Couldn't update user after creating course",
+            });
+        }
 
         // Return the new course and a success message
 		res.status(200).json({
