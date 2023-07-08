@@ -19,7 +19,7 @@ const Sidebar = () => {
 
     return (
     <>
-        <div className='flex flex-col h-[calc[100vh-3.5rem)] text-xs text-richblack-300 border h-full 
+        <div className=' whitespace-nowrap flex flex-col h-[calc[100vh-3.5rem)] mt-10 sm:mt-0 text-richblack-300 border h-full 
             bg-richblack-800 border-richblack-700'>
             <div className='h-10'></div>
                 {
@@ -48,7 +48,7 @@ const Sidebar = () => {
                         })
                     }
                 >
-                    <div className="flex items-center gap-x-2 text-xs">
+                    <div className="flex items-center gap-x-2">
                         <VscSignOut className="lg:text-lg" />
                         <p className='lg:text-base pl-1'>Logout</p>
                     </div>

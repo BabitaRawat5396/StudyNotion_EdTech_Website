@@ -11,19 +11,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { formattedDate } from '../utils/dateFormatter';
 import { Link, useParams } from 'react-router-dom';
 import Footer from '../components/common/Footer';
+import useWindowSize from '../hooks/windowSize';
 import GetAvgRating from '../utils/avRating';
 import {BsInfoCircle} from 'react-icons/bs';
 import { useEffect,useState } from 'react';
 import {RxDotFilled} from 'react-icons/rx';
 
-
-
 const Course = () => {
 
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
   const [subsectionLength,setSubsectionLength] = useState(0);
   const {course,loading} = useSelector( (state) => state.course);
   const [ratingCount,setRatingCount] = useState(0);
@@ -31,6 +26,7 @@ const Course = () => {
   // const [loading,setLoading] = useState(false);
   const [duration,setDuration] = useState(0);
   const [date,setDate] = useState(null);
+  const windowSize = useWindowSize();
   const {courseId} = useParams();
   const dispatch = useDispatch();
 
@@ -53,23 +49,7 @@ const Course = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[courseId]);
-  useEffect(() => {
-    // Function to update window size
-    const updateWindowSize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    // Event listener for window resize
-    window.addEventListener('resize', updateWindowSize);
-
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener('resize', updateWindowSize);
-    };
-  }, []);
+  
   // ratings and date
   useEffect( () => {
     if(course){

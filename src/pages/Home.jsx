@@ -13,16 +13,13 @@ import CommonButton from "../components/common/CommonButton";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getAllRatingsReview } from "../services/operations/ratingsReviewAPI";
-
+import useWindowSize from "../hooks/windowSize";
 
 // Home page related code will be here
 const Home = () => {
 
   const [reviewData,setReviewData] = useState(null);
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  const windowSize = useWindowSize();
   useEffect( () => {
     const getReviewsRating = async() => {
       const res = await getAllRatingsReview();
@@ -30,23 +27,7 @@ const Home = () => {
     }
     getReviewsRating();
   },[]);
-  useEffect(() => {
-    // Function to update window size
-    const updateWindowSize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    // Event listener for window resize
-    window.addEventListener('resize', updateWindowSize);
-
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener('resize', updateWindowSize);
-    };
-  }, []);
+  
   return (
     <>
       {/* Section1 */}

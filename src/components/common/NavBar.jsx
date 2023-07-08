@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
-import {NavbarLinks} from '../../data/navbar-links';
+import { NavbarLinks } from '../../data/navbar-links';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { apiConnector } from '../../services/apiConnector';
@@ -10,13 +10,12 @@ import ProfileDropdown from '../core/Auth/ProfileDropDown';
 import { ACCOUNT_TYPE } from '../../utils/constants';
 import MobileAppearance from '../core/NavBarAppearance/Mobile/MobileAppearance';
 import NavLinks from '../core/NavBarAppearance/Desktop/NavLinks';
+import useWindowSize from '../../hooks/windowSize';
+
 
 const NavBar = () => {
 
-    const [windowSize, setWindowSize] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
+    const windowSize = useWindowSize();
     const {token} = useSelector((state) => state.auth);
     const {user} = useSelector((state) => state.profile);
     const {totalItems} = useSelector((state) => state.cart);
@@ -40,25 +39,6 @@ const NavBar = () => {
         fetchSublinks();
     },[] )
 
-    
-    
-      useEffect(() => {
-        // Function to update window size
-        const updateWindowSize = () => {
-          setWindowSize({
-            width: window.innerWidth,
-            height: window.innerHeight,
-          });
-        };
-    
-        // Event listener for window resize
-        window.addEventListener('resize', updateWindowSize);
-    
-        // Cleanup function to remove the event listener
-        return () => {
-          window.removeEventListener('resize', updateWindowSize);
-        };
-      }, []);
 
     
 
