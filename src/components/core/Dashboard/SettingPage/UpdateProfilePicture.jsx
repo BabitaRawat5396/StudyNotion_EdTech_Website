@@ -58,18 +58,18 @@ const UpdateProfilePicture = () => {
 
     return (
     <>
-        <div className=" flex text-sm border border-richblack-700 w-9/12 rounded-lg bg-richblack-800 justify-between p-8">
+        <div className=" flex text-sm border border-richblack-700 w-11/12 sm:w-9/12 rounded-lg bg-richblack-800 justify-between px-4 py-5 sm:p-8">
             <div className=" relative flex gap-6 items-center">
                 <img 
                     src={previewSource || (image ? image : user?.imageUrl)} 
                     alt={`${user.firstname} ${user.lastname} `} 
-                    className="object-cover w-1/6 md:w-[60px] rounded-full aspect-square"
+                    className="object-cover w-[18%] sm:w-1/6 md:w-[60px] rounded-full aspect-square"
                 />
                 <div className="flex flex-col gap-2">
-                    <p className="text-richblack-5 text-lg">Change Profile Picture</p>
+                    <p className="text-richblack-5 text-lg whitespace-nowrap">Change Profile Picture</p>
                     <div className="flex gap-4" >
                         <label 
-                            className="bg-richblack-700 text-richblack-400 p-3 px-8 rounded-lg font-semibold cursor-pointer"
+                            className="bg-richblack-700 text-richblack-400 p-3 sm:px-8 rounded-lg font-semibold cursor-pointer"
                         >
                             Select File
                             <input 

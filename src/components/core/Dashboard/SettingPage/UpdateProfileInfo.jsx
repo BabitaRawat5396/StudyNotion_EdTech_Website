@@ -32,11 +32,11 @@ const UpdateProfileInfo = () => {
         <>
             <form 
                 onSubmit={handleSubmit(submitProfileForm)}
-                className='flex flex-col text-sm gap-7 border border-richblack-700 w-9/12 rounded-lg bg-richblack-800 justify-between p-8 text-richblack-50'
+                className='flex flex-col text-sm sm:gap-7 sm:border sm:border-richblack-700 w-11/12 sm:w-9/12 rounded-lg sm:bg-richblack-800 justify-between sm:p-8 text-richblack-50'
             >
                 {/* Profile Information */}
-                <div className="my-10 flex flex-col gap-y-6 rounded-md bg-richblack-800">
-                    <h2 className="text-lg font-semibold text-richblack-5">
+                <div className="my-10 flex flex-col gap-y-6 border sm:border-0 border-richblack-700 px-3 sm:px-0 py-5 sm:py-0 rounded-md bg-richblack-800">
+                    <h2 className="text-lg font-semibold text-richblack-5  border-b sm:border-b-0 border-richblack-700 py-1 sm:py-0">
                         Profile Information
                     </h2>
                     <div className="flex flex-col gap-5 lg:flex-row">
@@ -185,7 +185,7 @@ const UpdateProfileInfo = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-end gap-2">
+                <div className="flex justify-end gap-2 mr-4 sm:mr-0">
                     <button
                         onClick={() => {
                         navigate("/dashboard/my-profile")

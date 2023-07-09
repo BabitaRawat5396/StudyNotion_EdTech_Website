@@ -31,12 +31,12 @@ const UpdatePassword = () => {
   return (
     <form
       onSubmit={handleSubmit(submitPasswordForm)}
-      className='flex flex-col text-sm gap-7 border border-richblack-700 w-9/12 rounded-lg bg-richblack-800 justify-between p-8 text-richblack-50'
+      className='flex flex-col text-sm gap-4 sm:gap-7 sm:border border-richblack-700 w-11/12 sm:w-9/12 rounded-lg sm:bg-richblack-800 justify-between sm:p-8 text-richblack-50'
     >
-      <div className="my-4 flex flex-col gap-y-6 rounded-md bg-richblack-800">
-        <h1 className="text-lg font-semibold text-richblack-5">Password</h1>
-        <div className="flex gap-5">
-          <div className=" relative flex flex-col w-1/2 gap-2">
+      <div className="my-4 flex flex-col gap-y-6 border sm:border-0 px-4 py-5 sm:px-0 sm:py-0 border-richblack-700 rounded-md bg-richblack-800">
+        <h1 className="text-lg font-semibold text-richblack-5 border-b sm:border-b-0 border-richblack-700 py-1 sm:py-0">Password</h1>
+        <div className="flex flex-col sm:flex-row gap-5">
+          <div className=" relative flex flex-col sm:w-1/2 gap-2">
             <label htmlFor="currentPassword" className="lable-style">Current Password</label>  
             <input
               type={showCurrentPassword ? "text" : "password"}
@@ -61,7 +61,7 @@ const UpdatePassword = () => {
             }
             </div>
           </div>
-          <div className=" relative flex flex-col w-1/2 gap-2">
+          <div className=" relative flex flex-col sm:w-1/2 gap-2">
             <label htmlFor="newPassword" className="lable-style">Change Password </label>
             <input
               type={showNewPassword ? "text" : "password"}
@@ -88,7 +88,7 @@ const UpdatePassword = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-end gap-2">
+      <div className="flex justify-end gap-2 mr-4 sm:mr-0">
         <button
           onClick={() => {
             navigate("/dashboard/my-profile")
