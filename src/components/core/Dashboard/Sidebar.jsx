@@ -35,7 +35,7 @@ const Sidebar = () => {
                 <SidebarLink
                     link={{ name: "Settings", path: "/dashboard/settings",icon: "VscSettingsGear" }}
                 />
-                <button
+                {/* <button
                     className=" px-2 md:px-5 py-2 text-sm font-medium text-richblack-300"
                     onClick={() =>
                         setConfirmationModal({
@@ -55,10 +55,10 @@ const Sidebar = () => {
                         <VscSignOut className="lg:text-lg" />
                         <p className='lg:text-base pl-1'>Logout</p>
                     </div>
-                </button>
+                </button> */}
             </div>
         </div>
-        {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}    
+        {/* {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}     */}
     </>
     )
 }

@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 import { logout } from "../../../services/operations/authAPI"
 import useOnClickOutside from "../../../hooks/useOnClickOutside"
+import ConfirmationModal from "../../common/ConfirmationModal"
 
 
 export default function ProfileDropdown() {
+  const [confirmationModal, setConfirmationModal] = useState(null)
   const { user } = useSelector((state) => state.profile);
   const [open, setOpen] = useState(false)
   const dispatch = useDispatch()
@@ -48,7 +50,15 @@ export default function ProfileDropdown() {
           <div
             onClick={() => {
               dispatch(logout(navigate))
-              setOpen(false)
+              setOpen(false);
+              setConfirmationModal({
+                text1: "Are you sure?",
+                text2: "You will be logged out of your account.",
+                btn1Text: "Logout",
+                btn2Text: "Cancel",
+                btn1Handler: () => dispatch(logout(navigate)),
+                btn2Handler: () => setConfirmationModal(null),
+              })
             }}
             className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25"
           >
@@ -57,6 +67,7 @@ export default function ProfileDropdown() {
           </div>
         </div>
       )}
+      {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}  
     </button>
   )
 }
