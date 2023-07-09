@@ -1,15 +1,22 @@
-import * as Icons from "react-icons/vsc"
-import { useNavigate } from "react-router-dom";
+import { setShowSideBar } from "../../../slices/sideBarSlice";
 import { matchPath, useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import * as Icons from "react-icons/vsc";
 
 
-const SidebarList = ({link,setShowSideBar}) => {
+const SidebarList = ({link}) => {
+    
     let Icon;
+
     if(link.icon){
         Icon = Icons[link.icon];
     }
     const navigate = useNavigate();
     const location = useLocation();
+    const dispatch = useDispatch();
+
+
     const matchRoute = (route) => {
         return matchPath(route,location.pathname);
     }
@@ -21,7 +28,7 @@ const SidebarList = ({link,setShowSideBar}) => {
             onClick={ () => {
                 navigate(link.path)
                 if(setShowSideBar){
-                    setShowSideBar((prev) => !prev);
+                    dispatch(setShowSideBar(false))
                 }
             }}    
         >
@@ -34,4 +41,5 @@ const SidebarList = ({link,setShowSideBar}) => {
         </button>
     )
 }
+
 export default SidebarList

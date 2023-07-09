@@ -1,17 +1,21 @@
-import { Link } from 'react-router-dom';
-import { IoIosArrowDropdownCircle } from 'react-icons/io';
+import { setShowSideBar } from '../../../../slices/sideBarSlice';
 import { NavbarLinks } from '../../../../data/navbar-links';
-import { GiCrossMark } from 'react-icons/gi';
+import { IoIosArrowDropdownCircle } from 'react-icons/io';
+import { useDispatch, useSelector } from 'react-redux';
 import SidebarList from '../../Dashboard/SidebarLink';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import Sidebar from '../../Dashboard/Sidebar';
+import { GiCrossMark } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const SideBarHome = ({ subLinks, showSideBar, setShowSideBar }) => {
-  
+
+const SideBarHome = ({ subLinks}) => {
+
+  const dispatch = useDispatch();
   const [showCategories, setShowCategories] = useState(false);
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
+  const {showSideBar} = useSelector((state) => state.showSidebar);
 
   return (
     <div className={`fixed top-0 z-40 left-0 w-[64%] max-h-screen overflow-y-auto bg-richblack-800 transition-transform duration-300 ${
@@ -20,7 +24,7 @@ const SideBarHome = ({ subLinks, showSideBar, setShowSideBar }) => {
       <GiCrossMark
         className='text-2xl ml-48 mt-5 mb-3'
         onClick={() => {
-          setShowSideBar((prev) => !prev);
+          dispatch(setShowSideBar(false));
         }}
       />
       {token && (
@@ -37,7 +41,7 @@ const SideBarHome = ({ subLinks, showSideBar, setShowSideBar }) => {
       {showSideBar &&
         NavbarLinks.map((link, index) => (
           <div key={index}>
-            {index !== 1 && <SidebarList key={index} link={link} setShowSideBar={setShowSideBar} />}
+            {index !== 1 && <SidebarList key={index} link={link}/>}
             {index === 1 && (
               <div>
                 <div onClick={() => setShowCategories((prev) => !prev)} className='text-richblack-300 flex items-center gap-3 w-full px-2 md:px-5 py-2'>

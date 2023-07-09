@@ -7,7 +7,7 @@ import sectionSlice from '../slices/sectionSlice';
 import subsectionSlice from '../slices/subsectionSlice';
 import paymentSlice from '../slices/paymentSlice';
 import viewCourseSlice from '../slices/viewCourseSlice';
-import { setShowSideBar } from '../slices/sideBarSlice';
+import sideBarSlice from '../slices/sideBarSlice';
 
 // All the slices will be combine here
 const rootReducer = combineReducers({
@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
     subsection:subsectionSlice,
     payment:paymentSlice,
     viewCourse:viewCourseSlice,
-    showSidebar:setShowSideBar,
+    showSidebar:sideBarSlice,
 })
 
 export default rootReducer;

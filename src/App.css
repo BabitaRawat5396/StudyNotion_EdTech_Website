@@ -430,3 +430,28 @@ body,html{
   opacity: 1;
 }
 
+.empty-cart #oval,
+.empty-cart #plus,
+.empty-cart #diamond,
+.empty-cart #bubble-rounded {
+  animation: plopp 4s ease-out infinite;
+}
+
+@keyframes plopp {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+}
+
+.empty-cart #bg-line:nth-child(2) {
+  fill-opacity: 0.3;
+}
+
+.empty-cart #bg-line:nth-child(3) {
+  fill-opacity: 0.4;
+}
