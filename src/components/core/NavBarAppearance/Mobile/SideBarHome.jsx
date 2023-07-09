@@ -18,7 +18,7 @@ const SideBarHome = ({ subLinks}) => {
   const {showSideBar} = useSelector((state) => state.showSidebar);
 
   return (
-    <div className={`fixed top-0 z-40 left-0 w-[64%] max-h-screen overflow-y-auto bg-richblack-800 transition-transform duration-300 ${
+    <div className={`fixed top-0 z-40 left-0 w-[64%] max-h-screen overflow-y-auto bg-richblack-800 transition-transform duration-300 h-full ${
       showSideBar ? 'translate-x-0' : '-translate-x-full'
     }`}>
       <GiCrossMark
