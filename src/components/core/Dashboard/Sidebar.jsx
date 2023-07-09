@@ -6,7 +6,7 @@ import { logout } from "../../../services/operations/authAPI"
 import { useNavigate } from 'react-router-dom';
 import ConfirmationModal from '../../common/ConfirmationModal';
 import SidebarLink from './SidebarLink';
-
+import { setShowSideBar } from '../../../slices/sideBarSlice';
 
 const Sidebar = () => {
     
@@ -48,7 +48,10 @@ const Sidebar = () => {
                         })
                     }
                 >
-                    <div className="flex items-center gap-x-2">
+                    <div className="flex items-center gap-x-2"
+                        onClick={() => {
+                            dispatch(setShowSideBar(false))
+                        }}>
                         <VscSignOut className="lg:text-lg" />
                         <p className='lg:text-base pl-1'>Logout</p>
                     </div>

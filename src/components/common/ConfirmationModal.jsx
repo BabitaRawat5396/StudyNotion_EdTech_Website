@@ -2,8 +2,8 @@ import IconBtn from "./IconBtn"
 
 export default function ConfirmationModal({ modalData }) {
   return (
-    <div className="fixed inset-0 z-[1000] !mt-0 grid place-items-center overflow-auto bg-opacity-10 backdrop-blur-sm">
-      <div className=" w-[500px] bg-richblack-900 text-richblack-200 rounded-3xl border border-richblack-700 p-10">
+    <div className="fixed inset-0 z-50 !mt-0 grid place-items-center overflow-auto bg-opacity-10 backdrop-blur-sm w-screen">
+      <div className=" sm:w-[500px] bg-richblack-900 text-richblack-200 rounded-3xl border border-richblack-700 p-10">
         <p className="text-2xl font-medium text-richblack-5">
           {modalData?.text1}
         </p>
