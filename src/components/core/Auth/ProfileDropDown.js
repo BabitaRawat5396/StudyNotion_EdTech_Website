@@ -49,8 +49,6 @@ export default function ProfileDropdown() {
           </Link>
           <div
             onClick={() => {
-              dispatch(logout(navigate))
-              setOpen(false);
               setConfirmationModal({
                 text1: "Are you sure?",
                 text2: "You will be logged out of your account.",
@@ -59,6 +57,8 @@ export default function ProfileDropdown() {
                 btn1Handler: () => dispatch(logout(navigate)),
                 btn2Handler: () => setConfirmationModal(null),
               })
+              setOpen(false);
+              
             }}
             className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25"
           >
