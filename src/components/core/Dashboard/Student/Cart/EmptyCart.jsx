@@ -3,7 +3,7 @@
 const EmptyCart = () => {
   return (
     <div className="empty-cart mx-auto text-center font-maison-neue font-light">
-      <div className='w-1/3 sm:w-[30%] md:w-1/3 lg:w-1/4 xl:w-1/5 mx-auto'>
+      <div className='w-1/2 sm:w-[30%] md:w-1/3 lg:w-1/4 xl:w-1/5 mx-auto'>
         <svg viewBox="656 573 264 182" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <rect id="bg-line" stroke="none" fill-opacity="0.2" fill="#FFE100" fill-rule="evenodd" x="656" y="624" width="206" height="38" rx="19"></rect>
           <rect id="bg-line" stroke="none" fill-opacity="0.2" fill="#FFE100" fill-rule="evenodd" x="692" y="665" width="192" height="29" rx="14.5"></rect>
