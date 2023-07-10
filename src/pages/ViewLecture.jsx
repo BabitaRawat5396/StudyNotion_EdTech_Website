@@ -51,12 +51,12 @@ const ViewLecture = () => {
   return (
     <>
       <div className='flex min-h-[calc(100vh-3.5rem)] bg-richblack-900 w-screen'>
-        <div className={`${windowSize.width < 760 ? (lectureSideBar ? 'fixed z-40 bg-richblack-800 top-14 overflow-auto h-[calc(100vh-3.5rem)] w-[85%]' : 'hidden') : 'sm:w-[500px] md:w-[450px] lg:w-[30%] h-[calc(100vh-3.5rem)] overflow-auto bg-richblack-800'}`}>
+        <div className={`${windowSize.width < 760 ? (lectureSideBar ? 'fixed z-40 bg-richblack-800 top-14 overflow-auto h-[calc(100vh-3.5rem)] w-[85%] sm:w-[65%]' : 'hidden') : 'sm:w-[500px] md:w-[450px] lg:w-[30%] h-[calc(100vh-3.5rem)] overflow-auto bg-richblack-800'}`}>
           <SideBarCourseDetails setReviewModal={setReviewModal}/>
         </div>
 
         
-        <div className='h-[calc(100vh-3.5rem)] overflow-y-auto sm:w-5/6'>
+        <div className='h-[calc(100vh-3.5rem)] overflow-y-auto w-full md:w-5/6'>
             <MdMenuOpen onClick={() => dispatch(setLectureSideBar(true))} className={`${windowSize.width < 760 ? 'text-richblack-200 text-2xl m-2' : ''}`}/>
             <Outlet/>
         </div>

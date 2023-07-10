@@ -41,7 +41,7 @@ const SideBarCourseDetails = ({setReviewModal}) => {
       <div className='flex justify-between'>
         <span 
           onClick={() => navigate("/dashboard/enrolled-courses")}
-          className='cursor-pointer flex gap-1 items-center p-4 px-2'
+          className='whitespace-nowrap cursor-pointer flex gap-1 items-center p-4 px-2'
           >
           <IoIosArrowBack/>
             Back to courses
@@ -49,7 +49,7 @@ const SideBarCourseDetails = ({setReviewModal}) => {
         <IconBtn
           text='Add review'
           onclick={() => setReviewModal(true)}
-          customClasses=' w-fit m-4'
+          customClasses=' w-fit m-4 whitespace-nowrap'
           />
       </div>
       <h1 className='px-4 pt-2 text-lg text-richblack-50 border-b border-caribbeangreen-700 

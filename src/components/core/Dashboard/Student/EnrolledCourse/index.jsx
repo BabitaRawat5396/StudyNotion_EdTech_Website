@@ -47,7 +47,6 @@ const EnrolledCourse = () => {
               ) : (
                 
                 <div>
-                  Navigation
                   <EnrolledCoursesTable enrolledCourses={enrolledCourses} setEnrolledCourses={setEnrolledCourses}/>
                 </div>
               )

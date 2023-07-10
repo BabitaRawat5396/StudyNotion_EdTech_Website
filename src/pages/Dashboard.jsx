@@ -23,16 +23,9 @@ const Dashboard = () => {
   return (
     <div className='flex min-h-[calc(100vh-3.5rem)] bg-richblack-900 w-screen'>
         {
-            windowSize.width < 770 && showSideBar && (
+            windowSize.width < 770 && showSideBar || windowSize.width > 770 && (
                 <div className='w-[24%] md:w-[25%] lg:w-1/6'>
                     <Sidebar/>  
-                </div>
-            )
-        }
-        {
-            windowSize.width > 770 && (
-                <div className='w-[24%] md:w-[25%] lg:w-1/6'>
-                    <Sidebar/>      
                 </div>
             )
         }

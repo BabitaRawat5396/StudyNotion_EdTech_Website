@@ -98,32 +98,32 @@ const CourseReviewModal = ({setReviewModal,ratingReview}) => {
 
   return (
     <div className="text-richblack-800 fixed inset-0 z-[1000] !mt-0 grid place-items-center overflow-auto bg-opacity-10 backdrop-blur-sm">
-      <div className='bg-richblack-800 w-[500px] rounded-xl'>
-        <div className='flex justify-between p-4 bg-richblack-700 text-richblack-50 items-center rounded-t-xl'>
+      <div className='bg-richblack-800 w-10/12 sm:w-[500px] h-[23rem] sm:h-[28rem] rounded-xl mx-auto'>
+        <div className='flex justify-between p-2 md:p-4 bg-richblack-700 text-richblack-50 items-center rounded-t-xl'>
           <h1 className='font-semibold '>Add Review</h1>
           <GiCrossMark
             onClick={() => setReviewModal(false)}
             className='cursor-pointer'
            />
         </div>
-        <div className='flex flex-col items-center justify-center p-8 gap-10'>
+        <div className='flex flex-col items-center justify-center p-5 sm:p-8 gap-3'>
           <div className='text-richblack-400'>
             <div className='flex gap-2'>
-              <img src={user.imageUrl} alt={user.firstName} className='h-14 aspect-square rounded-full object-cover'/>
+              <img src={user.imageUrl} alt={user.firstName} className='h-12 aspect-square rounded-full object-cover'/>
               <div>
-                <p className='font-semibold text-richblack-50 text-lg'>{user.firstName} {user.lastName}</p>
-                <p>Posting Publicly</p>
+                <p className='font-semibold text-richblack-50 '>{user.firstName} {user.lastName}</p>
+                <p className=' text-sm '>Posting Publicly</p>
               </div>
             </div>
           </div>
           <form onSubmit={handleSubmit(handleSubmitReview)} >
             <div className='flex px-3 items-center'>
-              <p className='text-lg text-richblack-50 font-semibold'>Rating : </p>
+              <p className='text-richblack-50 font-semibold'>Rating : </p>
               <ReactStars 
                 count={5}
                 isHalf={true}
                 onChange={ratingChanged}
-                size={30}
+                size={25}
                 activeColor="#ffd700"
                 value={ratingData?.rating}
                 />
@@ -136,7 +136,7 @@ const CourseReviewModal = ({setReviewModal,ratingReview}) => {
                 name='courseExperience'
                 {...register("courseExperience",{required:true})}
                 placeholder='Share Details of your own experience for this course'
-                className='form-style h-48'
+                className='form-style h-20 sm:h-32 w-full'
               />
               {
                 errors.courseExperience && (
