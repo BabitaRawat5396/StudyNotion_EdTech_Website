@@ -2,7 +2,7 @@
 import { fetchInstructorCourses } from '../../../../../services/operations/courseAPI';
 import { getInstructorData } from '../../../../../services/operations/profileAPI';
 import React, { useEffect, useState } from 'react';
-import InstructorChart from './InstructorChart';
+import InstructorChart from './EnrolledCoursesTable';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
