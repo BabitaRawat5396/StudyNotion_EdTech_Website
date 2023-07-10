@@ -280,7 +280,7 @@ const CourseCreation = () => {
                 <button
                   onClick={() => dispatch(setRenderPageNo(2))}
                   type="button"
-                  className='bg-blue-700 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900'  
+                  className='whitespace-nowrap bg-blue-700 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900'  
                 >
                   Continue Without Saving
                 </button>
@@ -288,7 +288,7 @@ const CourseCreation = () => {
             }
             <button
               type="submit"
-              className="flex bg-yellow-300 items-center cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900"
+              className=" whitespace-nowrap flex bg-yellow-300 items-center cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900"
               >
               <p>{editCourse ? "Save Changes" : "Next"}</p>
               <GrFormNext/>

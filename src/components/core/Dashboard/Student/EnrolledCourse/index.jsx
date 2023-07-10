@@ -1,63 +1,122 @@
 
+import { fetchInstructorCourses } from '../../../../../services/operations/courseAPI';
+import { getInstructorData } from '../../../../../services/operations/profileAPI';
+import React, { useEffect, useState } from 'react';
+import InstructorChart from './InstructorChart';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { fetchEnrolledCourses } from '../../../../../services/operations/courseAPI';
-import EnrolledCoursesTable from './EnrolledCoursesTable';
-import { useDispatch, useSelector } from "react-redux";
-import { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
+const InstructorDashboard = () => {
+    const {token} = useSelector((state)=> state.auth);
+    const {user} = useSelector((state)=>state.profile);
+    const [loading, setLoading] = useState(false);
+    const [instructorData, setInstructorData] = useState(null);
+    const [courses, setCourses] = useState([]);
 
-const EnrolledCourse = () => {
+    useEffect(()=> {
+        const getCourseDataWithStats = async() => {
+            setLoading(true);
+            
+            const instructorApiData = await getInstructorData(token);
+            const result = await fetchInstructorCourses(token);
 
-  const {token} = useSelector( (state) => state.auth);
-  const {loading} = useSelector( (state) => state.course);
+            console.log(instructorApiData);
 
-  const [enrolledCourses,setEnrolledCourses] = useState([]);
-  const dispatch = useDispatch();
+            if(instructorApiData.length)
+                setInstructorData(instructorApiData);
 
-  useEffect( () => {
-    
-    const getEnrolledCourses = async() => {
-      const result = await fetchEnrolledCourses(token,dispatch);
-      setEnrolledCourses(result);
-    }
-    getEnrolledCourses();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
-  return (
-    <div>
-      {
-        !enrolledCourses || loading ? (
-          <div className="wrap">
-            <div className="loading sm:ml-20">
-              <div className="bounceball"></div>
-              <div className="text"> LOADING...</div>
-            </div>
-          </div>
-        ) : (
-          <div>
-            <div className=" text-sm text-richblack-300 mt-6 ml-6">
-              <Link to='/'>Home</Link> /
-              <span> Dashboard / </span>
-              <span className='text-yellow-100'>Enrolled Courses</span>
-            </div>
-            <h1 className='text-3xl text-richblack-50 mx-8 py-2 my-3 px-2 border-b border-richblack-600'>Enrolled Courses</h1>
-            {
-              !enrolledCourses.length ? (
-                <p className="text-2xl text-richblack-500 text-center">You have not enrolled in any course yet.</p>
-              ) : (
-                
-                <div>
-                  <EnrolledCoursesTable enrolledCourses={enrolledCourses} setEnrolledCourses={setEnrolledCourses}/>
-                </div>
-              )
+            if(result) {
+                setCourses(result);
             }
-          </div>
-          
-        )
-      }
+            setLoading(false);
+        }
+        getCourseDataWithStats();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
+    const totalAmount = instructorData?.reduce((acc,curr)=> acc + curr.totalAmountGenerated, 0);
+    const totalStudents = instructorData?.reduce((acc,curr)=>acc + curr.totalStudentsEnrolled, 0);
+
+  return (
+    <div className='p-5 sm:p-10 flex flex-col gap-6'>
+      {loading ? (
+        <div className="wrap">
+          <div className="loading text-base lg:text-lg lg:pl-52">
+            <div className="bounceball"></div>
+            <div className="text"> LOADING</div>
+          </div>
+        </div>
+        )
+      : courses && courses.length > 0 
+        ? (<div className=' flex flex-col gap-8'>
+            <div className='flex flex-col gap-3 '>
+              <h1 className='text-3xl font-semibold text-richblack-50'>Hi {user?.firstName}</h1>
+              <p className='text-sm text-richblack-600'>Let's start something new</p>
+            </div>
+            <div className='flex flex-col sm:flex-row gap-8'>
+              <InstructorChart  courses={instructorData}/>
+                <div className='sm:w-[30%] bg-richblack-800 rounded-xl p-6 flex flex-col gap-6'>
+                  <p className='text-3xl font-semibold text-yellow-400'>Statistics</p>
+                  <div>
+                    <p className='text-xl font-semibold text-richblack-500'>Total Courses</p>
+                    <p className='text-3xl text-yellow-700'>{courses.length}</p>
+                  </div>
+
+                  <div>
+                    <p className='text-xl font-semibold text-richblack-500'>Total Students</p>
+                    <p className='text-3xl text-yellow-700'>{totalStudents}</p>
+                  </div>
+
+                  <div>
+                    <p className='text-xl font-semibold text-richblack-500'>Total Income</p>
+                    <p className='text-3xl text-yellow-700'>{totalAmount}</p>
+                  </div>
+                </div>
+              </div>
+            <div>
+            {/* Render 3 courses */}
+            <div className='bg-richblack-800 p-6 rounded-xl'>
+              <div className='flex justify-between p-4 '>
+                  <p className='text-2xl font-semibold text-richblack-400'>Your Courses</p>
+                  <Link to="/dashboard/my-courses">
+                      <p className='text-yellow-200'>View all</p>
+                  </Link>
+              </div>
+              <div className='flex flex-col sm:flex-row gap-7'>
+                  {
+                      courses.slice(0,3).map((course,index)=> (
+                          <div key={index} className='sm:w-96 flex flex-col gap-5'>
+                              <img 
+                                  src={course.thumbnail}
+                                  alt={course.courseName}
+                                  className=' h-[12rem]  sm:w-[20rem] rounded-xl aspect-square object-cover'
+                              />
+                              <div className=''>
+                                  <p className='text-xl text-blue-500'>{course.courseName}</p>
+                                  <div className='flex gap-2 text-richblack-400'>
+                                      <p>{course.studentEnrolled.length} students</p>
+                                      <p> | </p>
+                                      <p> Rs {course.price}</p>
+                                  </div>
+
+                              </div>
+                          </div>
+                      ))
+                  }
+              </div>
+            </div>  
+          </div>
+        </div>
+        
+        )
+        :(<div>
+            <p>You have not created any courses yet</p>
+            <Link to={"/dashboard/addCourse"}>
+                Create a Course
+            </Link>
+        </div>)}
     </div>
   )
 }
 
-export default EnrolledCourse
+export default InstructorDashboard

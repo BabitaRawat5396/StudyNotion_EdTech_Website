@@ -1,13 +1,13 @@
 
-import { useForm } from 'react-hook-form'
-import {GrFormPrevious} from 'react-icons/gr'
-import IconBtn from '../../../../../common/IconBtn';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { COURSE_STATUS } from '../../../../../../utils/constants';
-import { updateCourse } from '../../../../../../services/operations/courseAPI';
-import { useEffect } from 'react';
 import { resetCourseState , setRenderPageNo} from '../../../../../../slices/courseSlice';
+import { updateCourse } from '../../../../../../services/operations/courseAPI';
+import { COURSE_STATUS } from '../../../../../../utils/constants';
+import { useDispatch, useSelector } from 'react-redux';
+import IconBtn from '../../../../../common/IconBtn';
+import { useNavigate } from 'react-router-dom';
+import {GrFormPrevious} from 'react-icons/gr';
+import { useForm } from 'react-hook-form';
+import { useEffect } from 'react';
 
 
 const PublishCourse = () => {
@@ -69,11 +69,11 @@ const PublishCourse = () => {
         </label>
       </div>
           
-      <div className='flex justify-between'>
+      <div className='flex flex-col sm:flex-row justify-between gap-4'>
         <button
           onClick={() => {dispatch(setRenderPageNo(2))}}
           type='button'
-          className='flex items-center bg-blue-700 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900'
+          className='w-fit flex items-center bg-blue-700 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900'
           >
           <GrFormPrevious/>
           <p>Back</p>
@@ -82,13 +82,14 @@ const PublishCourse = () => {
           <button
             type='button'
             onClick={SaveDraft}
-            className='bg-blue-700 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900'
+            className='whitespace-nowrap bg-blue-700 cursor-pointer gap-x-2 rounded-md py-2 px-5 font-semibold text-richblack-900'
             >
               Save as a Draft
           </button>
           <IconBtn
             type="submit"
             text="Save and Publish"
+            customClasses='whitespace-nowrap'
           />
         </div>
       </div>

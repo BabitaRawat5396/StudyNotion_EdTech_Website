@@ -1,8 +1,9 @@
-import { FaCheck } from "react-icons/fa"
-import { useSelector } from "react-redux"
+
 import CourseCreation from "./CourseCreation";
 import PublishCourse from "./PublishCourse";
 import CourseBuilder from "./CourseBuilder";
+import { useSelector } from "react-redux";
+import { FaCheck } from "react-icons/fa";
 
 
 export default function RenderSteps() {
@@ -70,7 +71,7 @@ export default function RenderSteps() {
               <p
                 className={`text-sm ${
                   renderPageNo >= item.id ? "text-yellow-100" : "text-richblack-500"
-                } ${item.id === 1 ? "pr-14 whitespace-nowrap" : item.id === 2 ? "pr-9 whitespace-nowrap" : "pl-4" }`}
+                } ${item.id === 1 ? "pr-12 whitespace-nowrap" : item.id === 2 ? "pr-9 whitespace-nowrap" : "pl-4" }`}
               >
                 {item.title}
               </p>

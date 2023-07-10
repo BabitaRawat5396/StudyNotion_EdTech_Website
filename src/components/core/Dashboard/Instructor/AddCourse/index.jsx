@@ -2,6 +2,7 @@
 import {RiArrowDropLeftLine} from 'react-icons/ri';
 import { useSelector } from 'react-redux';
 import RenderSteps from './RenderSteps';
+import { Link } from 'react-router-dom';
 
 const AddCourses = () => {
 
@@ -14,7 +15,7 @@ const AddCourses = () => {
             {/* back to dashboard*/}
             <div className='flex text-richblack-300 items-center'>
                 <RiArrowDropLeftLine className='text-4xl'/>
-                <p>Back to Dashboard</p>
+                <Link to={'/dashboard/instructor'}>Back to Dashboard</Link>
             </div>
             {
                 loading ? (

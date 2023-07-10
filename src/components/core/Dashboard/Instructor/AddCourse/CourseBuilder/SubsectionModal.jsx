@@ -1,10 +1,10 @@
+
+import { createSubsection, updateSubsection } from '../../../../../../services/operations/subsectionAPI';
+import { useDispatch, useSelector } from 'react-redux';
+import FileUpload from '../Common/FileUpload';
+import { useEffect, useState } from 'react';
 import {GiCrossMark} from 'react-icons/gi';
 import { useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
-import FileUpload from '../Common/FileUpload';
-import { createSubsection, updateSubsection } from '../../../../../../services/operations/subsectionAPI';
-import { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 
 
@@ -109,14 +109,14 @@ const SubSectionModal = ({modalData,setModalData,add=false,view=false,edit=false
 
   return (
     <div className="fixed inset-0 z-[1000] !mt-0 grid place-items-center overflow-auto bg-opacity-10 backdrop-blur-sm p-12">
-    <div className='bg-richblack-800 w-[700px] rounded-xl border border-richblack-700'>
-      <div className='flex justify-between rounded-t-xl text-xl font-semibold px-6 py-3 items-center leading-10 bg-blue-700 text-yellow-500'>
+    <div className='bg-richblack-800 md:w-[700px] rounded-xl border border-richblack-700'>
+      <div className='flex justify-between rounded-t-xl text-xl font-semibold px-3 py-2 md:px-6 md:py-3 items-center leading-10 bg-blue-700 text-yellow-500'>
         <p>{view && "Viewing"} {add && "Adding"} {edit && "Editing"} Lecture</p>
         <GiCrossMark className='cursor-pointer' onClick={() => (!loading ? setModalData(null): {})}/>
       </div>
       <form
         onSubmit={handleSubmit(handleSubsectionForm)}
-        className='px-14 py-10 flex flex-col gap-5 h-[60%]'
+        className=' px-4 sm:px-14 py-10 flex flex-col gap-5 sm:h-[60%]'
       >
         <FileUpload
           setValue={setValue}
