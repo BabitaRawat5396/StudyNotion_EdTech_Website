@@ -12,17 +12,15 @@ const EnrolledCourse = () => {
   const {loading} = useSelector( (state) => state.course);
 
   const [enrolledCourses,setEnrolledCourses] = useState([]);
-  // const [loading,setLoading] = useState(false);
   const dispatch = useDispatch();
 
   useEffect( () => {
-    // setLoading(true);
+    
     const getEnrolledCourses = async() => {
       const result = await fetchEnrolledCourses(token,dispatch);
       setEnrolledCourses(result);
     }
     getEnrolledCourses();
-    // setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
   return (
@@ -30,7 +28,7 @@ const EnrolledCourse = () => {
       {
         !enrolledCourses || loading ? (
           <div className="wrap">
-            <div className="loading ml-20">
+            <div className="loading sm:ml-20">
               <div className="bounceball"></div>
               <div className="text"> LOADING...</div>
             </div>

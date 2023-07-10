@@ -113,13 +113,13 @@ const VideoSection = () => {
   }
 
   return (
-    <div>
+    <div className=''>
     {
       !subsectionDetails ? (
         <div>No Data found</div>
       ) : (
         <div>
-          <div className='pt-14'>
+          <div className='pt-8'>
             <Player
               ref = {playerRef}
               aspectRatio="16:8"
@@ -189,11 +189,11 @@ const VideoSection = () => {
         
       )
     }
-    <div className='text-white p-8 px-10 flex flex-col gap-2'>
-      <h1 className='text-3xl text-blue-200 font-semibold'>
+    <div className='text-white sm:p-4 sm:px-10 flex flex-col gap-2 px-4 py-3'>
+      <h1 className='text-3xl text-richblack-100 font-semibold'>
         {subsectionDetails?.title}
       </h1>
-      <p className='text-sm text-yellow-200'>
+      <p className='text-sm text-richblack-400'>
         {subsectionDetails?.description}
       </p>
     </div>

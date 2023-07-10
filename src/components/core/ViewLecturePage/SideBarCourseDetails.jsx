@@ -4,22 +4,22 @@ import { MdKeyboardArrowUp, MdOndemandVideo } from 'react-icons/md';
 import { sectionDuration } from '../../../utils/totalTimeDuration';
 import {IoIosArrowBack} from 'react-icons/io';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import IconBtn from '../../common/IconBtn';
+import {GiCrossMark} from 'react-icons/gi';
+import { setLectureSideBar } from '../../../slices/sideBarSlice';
+
 
 const SideBarCourseDetails = ({setReviewModal}) => {
-  const [expandedSection, setExpandedSection] = useState(null);
+
+  const { courseSectionData, courseEntireData, completedLectures, totalNoOfLectures } = useSelector((state) => state.viewCourse);
+  const {lectureSideBar} = useSelector((state) => state.showSidebar);
   const [activeSubSection, setActiveSubSection] = useState(null);
+  const [expandedSection, setExpandedSection] = useState(null);
   const {courseId, sectionId, subsectionId} = useParams();
   const location = useLocation();
   const navigate = useNavigate();
-
-  const {
-    courseSectionData,
-    courseEntireData,
-    completedLectures,
-    totalNoOfLectures
-  } = useSelector((state) => state.viewCourse);
+  const dispatch = useDispatch();
 
     useEffect(() => {
       if(sectionId){
@@ -33,6 +33,11 @@ const SideBarCourseDetails = ({setReviewModal}) => {
 
   return (
     <div className='text-richblack-200'>
+      {
+        lectureSideBar && (
+          <GiCrossMark onClick={() => dispatch(setLectureSideBar(false))} className='text-xl w-full pl-72 mt-2'/>
+        )
+      }
       <div className='flex justify-between'>
         <span 
           onClick={() => navigate("/dashboard/enrolled-courses")}
@@ -47,10 +52,10 @@ const SideBarCourseDetails = ({setReviewModal}) => {
           customClasses=' w-fit m-4'
           />
       </div>
-      <h1 className='px-4 pt-2 text-lg text-caribbeangreen-600 border-b border-caribbeangreen-700 
-        font-semibold'>
+      <h1 className='px-4 pt-2 text-lg text-richblack-50 border-b border-caribbeangreen-700 
+        font-semibold mb-6'>
         {courseEntireData?.courseName} (
-          <span className='text-richblack-400'>
+          <span className=' text-caribbeangreen-600'>
             {completedLectures.length} / {totalNoOfLectures}
           </span>
         )
@@ -62,7 +67,6 @@ const SideBarCourseDetails = ({setReviewModal}) => {
             onClick={() => {
               setExpandedSection(section._id);
             }}
-            className='mt-7'
             >
             <div 
               className='flex justify-between items-center cursor-pointer bg-richblack-700 py-2 pl-2 pr-4'
@@ -92,7 +96,7 @@ const SideBarCourseDetails = ({setReviewModal}) => {
                         type='checkbox'
                         checked= {completedLectures.includes(subsection?._id)}
                         onChange={() => {}}
-                        className='mb-4'
+                        className='mb-4 flex-shrink-0'
                         />
                       <span>
                         {subsection.title}
@@ -100,7 +104,7 @@ const SideBarCourseDetails = ({setReviewModal}) => {
                     </label>
                     
                       
-                    <MdOndemandVideo className='mt-1'/>
+                    <MdOndemandVideo className='mt-1 flex-shrink-0'/>
                 </div>
               ))
               )

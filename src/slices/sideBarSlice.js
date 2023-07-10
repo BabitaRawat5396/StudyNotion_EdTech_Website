@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   showSideBar:false,
+  lectureSideBar:false,
 }
 
 const sideBarSlice = createSlice({
@@ -10,9 +11,12 @@ const sideBarSlice = createSlice({
   reducers:{
     setShowSideBar : (state,value) => {
       state.showSideBar = value.payload;
+    },
+    setLectureSideBar : (state,value) => {
+      state.lectureSideBar = value.payload;
     }
   }
 });
 
-export const {setShowSideBar} = sideBarSlice.actions;
+export const {setShowSideBar , setLectureSideBar} = sideBarSlice.actions;
 export default sideBarSlice.reducer;
