@@ -95,6 +95,7 @@ function App() {
           )
         }
         </Route>
+
         <Route 
           element={
             <PrivateRoute>
@@ -125,6 +126,7 @@ function App() {
             )
           }
         </Route>
+        
         <Route path="/catalog/:categoryName" element={<Category/>}/>
         <Route path="/courses/:courseId" element={<Course/>}/>
         <Route path="*" element={<Error/>}/>
