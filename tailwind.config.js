@@ -2,6 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      'xs':'430px',
+      'xs-more': '520px',
+      'sm': '640px',
+      'md': '768px',
+      'md-more':'885px',
+      'lg': '1024px',
+      'xl': '1280px',
+    },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
       "edu-sa": ["Edu SA Beginner", "cursive"],
@@ -131,8 +140,9 @@ module.exports = {
       boxShadow: {
         'inset-white': 'inset 0px -1px 0px rgba(255, 255, 255, 0.18)',
         'lg': ' 15px rgba(0, 0, 0)',
-        'top-left': '-20px -20px 100px 30px', // Set the shadow for top and left sides
-        'bottom-right1': '15px 15px 1px 3px', // Set the shadow for right and bottom sides
+        'top-left': '-10px -10px 60px 30px', // Set the shadow for top and left sides
+        'bottom-right1-md': '15px 15px 3px 2px', // Set the shadow for right and bottom sides,
+        'bottom-right1-sm': '6px 6px 3px 2px', // Set the shadow for right and bottom sides
         'bottom-right2': '10px 10px 1px 3px',
         'aboutUsTop':'-1px -1px 10px 1px'
       },

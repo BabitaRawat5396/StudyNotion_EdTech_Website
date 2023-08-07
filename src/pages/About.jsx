@@ -1,10 +1,12 @@
-import HeadingContent from "../components/common/HeadingContent"
-import CommonButton from "../components/common/CommonButton";
-import {aboutUsCard} from '../data/about-us-card'
-import MessageForm from "../components/core/AboutPage/MessageForm";
-import Footer from "../components/common/Footer";
-import aboutVideo from '../assets/Videos/aboutVideo.mp4'
+
+
 import ImageContent from "../components/core/AboutPage/ImageContent";
+import MessageForm from "../components/core/AboutPage/MessageForm";
+import HeadingContent from "../components/common/HeadingContent";
+import CommonButton from "../components/common/CommonButton";
+import aboutVideo from '../assets/Videos/aboutVideo.mp4';
+import {aboutUsCard} from '../data/about-us-card';
+import Footer from "../components/common/Footer";
 
 const AboutUs = () => {
     

@@ -2,10 +2,10 @@ import ReactStars from "react-rating-stars-component";
 
 const ReviewCard = ({item,windowSize}) => {
   return (
-    <div className="border border-richblack-800 rounded-2xl p-3 sm:p-5 flex flex-col gap-4 bg-richblack-800 h-[22rem] sm:h-80 sm:w-96 overflow-hidden">
+    <div className="border border-richblack-800 rounded-2xl p-3 xs:p-5 flex flex-col gap-4 bg-richblack-800 h-[22rem] sm:h-80 xs:w-96 overflow-hidden">
       <div className="flex gap-3">
       {
-        windowSize.width < 620 ? (
+        windowSize.width < 470 ? (
           <div className="flex flex-col gap-1 border-b border-richblack-700 pt-3 pb-2 mx-auto">
             <div className="flex gap-3">
               <div className="rounded-full overflow-hidden aspect-square h-8">

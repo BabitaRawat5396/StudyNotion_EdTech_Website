@@ -15,7 +15,7 @@ const Card = ({heading,body}) => {
     }
     return (
         <div className={` ${active ? "bg-white shadow-yellow-50 shadow-bottom-right2 cursor-pointer": "bg-richblack-800"} 
-         h-60 w-11/12 sm:h-[21rem] md:h-80 lg:w-1/3 flex flex-col justify-between px-2 sm:px-10 pt-4 sm:pt-10 pb-6 md:pt-7 md:pb-2 md:px-5 relative rounded-lg`
+         h-[18rem] xs-more:h-72 w-full sm:h-80 md:h-80 flex flex-col justify-between px-6 sm:px-10 pt-4 sm:pt-10 pb-6 md:pt-7 md:pb-2 md:px-5 relative rounded-lg`
         }
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}

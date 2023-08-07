@@ -20,6 +20,7 @@ const Home = () => {
 
   const [reviewData,setReviewData] = useState(null);
   const windowSize = useWindowSize();
+
   useEffect( () => {
     const getReviewsRating = async() => {
       const res = await getAllRatingsReview();
@@ -29,7 +30,8 @@ const Home = () => {
   },[]);
   
   return (
-    <>
+    <div>
+
       {/* Section1 */}
       <div className="relative mx-auto flex flex-col gap-8 items-center h-1/4 py-14 px-4 sm:px-20 bg-richblack-900"> 
         
@@ -76,23 +78,23 @@ const Home = () => {
             </CommonButton>
           </div>
           <div className="relative z-20 mt-6 lg:w-9/12 ">
-            <div className="absolute left-5 z-[-1] shadow-richblue-800 shadow-top-left rounded-full h-full w-full"></div>
-            <div className="absolute z-10 shadow-richblack-5 shadow-bottom-right1 h-full w-full "></div>
+            <div className="absolute left-5 z-[-1] shadow-richblue-800 shadow-top-left rounded-full h-full w-[96%]"></div>
+            <div className="absolute z-10 shadow-richblack-5 md:shadow-bottom-right1-md md:shadow-richblack-5 shadow-bottom-right1-sm h-full w-full "></div>
             <video 
               muted
               autoPlay
               loop
-            >
+              >
               <source src={Banner} type="video/mp4"/>
             </video>
           </div>
         </div>
 
         {/* Animated Codeblocks Section */}
-        <div className="flex flex-col w-11/12 gap-40 mt-16 lg:mt-28 mb-24 ">
+        <div className="flex flex-col w-[95%] gap-20 md-more:gap-40 mt-16 md:mt-24 lg:mt-28 mb-24 ">
           <CodeBlocks
-            styleHeadingContent="flex-col lg:w-4/5"
-            styleCodeBlocks="lg:flex-row"
+            styleHeadingContent="flex-col w-11/12 lg:w-9/12"
+            styleCodeBlocks="md-more:flex-row"
             highlighttext=" coding potential"
             heading={
               {
@@ -142,7 +144,7 @@ const Home = () => {
           />
           <CodeBlocks
             styleHeadingContent="flex-col"
-            styleCodeBlocks="lg:flex-row-reverse lg:gap-28"
+            styleCodeBlocks="md-more:flex-row-reverse lg:gap-28"
             highlighttext=" coding in seconds"
             heading={
               {
@@ -152,7 +154,7 @@ const Home = () => {
             }
             subsection={
               {
-                style:"text-richblack-300 w-5/6",
+                style:"text-richblack-300 w-5/6 md-more:w-full",
                 content:["Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson."]
               }
             }
@@ -193,7 +195,7 @@ const Home = () => {
         </div>
 
         {/* Explore cards slide Section */}
-        <div className="flex flex-col w-11/12 gap-4 lg:gap-8 items-center">
+        <div className="flex flex-col w-full gap-4 lg:gap-8 items-center">
           <HeadingContent
             styleHeadingContent="flex-col items-center lg:w-7/12 md:w-9/12"
             heading={
@@ -212,15 +214,14 @@ const Home = () => {
           />
           <ExploreMore/>
         </div>
-
       </div>
 
       {/* Section2 */}
       <div className=" bg-pure-greys-5 text-richblack-700 h-1/4 flex flex-col gap-20 items-center">
         
         {/* rombus frame Section*/}
-        <div className="homepage_bg h-80 w-full"> 
-          <div className="flex gap-6 py-32 mx-auto justify-center items-center">
+        <div className="homepage_bg h-52 sm:h-60 md:h-64 lg:h-80 w-full"> 
+          <div className="flex gap-6 py-20 sm:py-24 md:py-40 mx-auto justify-center items-center">
             <CommonButton
               customStyle={"bg-yellow-50 text-richblack-900"}
               icon={"MdArrowForward"}
@@ -235,8 +236,7 @@ const Home = () => {
           </div>
         </div>
           
-
-        <div className="lg:max-w-max-content w-8/12 md:px-20 md:w-11/12 flex flex-col">
+        <div className="lg:max-w-max-content w-[85%] sm:w-10/12 md:px-20 md:w-11/12 flex flex-col relative">
           <div>
             <HeadingContent
               styleHeadingContent="flex flex-col lg:flex-row mb-10 md:mb-4"
@@ -248,7 +248,7 @@ const Home = () => {
               }
               body={
                 {
-                  style:"text-richblack-700",
+                  style:"text-richblack-700 mt-2",
                   content:"The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills."
                 }
               }
@@ -265,7 +265,7 @@ const Home = () => {
                        
           <TimelineSection/>
           <LearningLanguageSection/>
-          <div className="flex flex-col items-center lg:my-10 mb-20">
+          <div className="flex flex-col items-center lg:my-10 mb-20 absolute bottom-4 left-[35%] xs-more:left-[40%] md:left-[43%]">
             <CommonButton
               customStyle={"bg-richblack-800 text-richblack-5"}
             >
@@ -277,12 +277,12 @@ const Home = () => {
 
       {/* Section3 */}
       <div className="bg-richblack-900 h-1/4 mx-auto flex flex-col gap-20 justify-center items-center">
-        <div className="flex flex-col lg:flex-row w-11/12 gap-20 justify-center items-center mt-20 lg:my-32 p-10">
-          <div className="relative w-full h-full z-[2]">
-            <img src={instructor} alt="instructor"/>
+        <div className="flex flex-col md:flex-row w-full md:w-11/12 gap-20 md:gap-10 justify-center items-center mt-20 lg:my-32 p-10">
+          <div className="relative w-full h-full lg:w-10/12 z-[2]">
+            <img src={instructor} alt="instructor" className="w-full h-full"/>
             <div className="absolute -left-4 bottom-4 z-[-1] bg-richblack-5 h-full w-full"></div>
           </div>
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-12 md:w-[70%]">
             <HeadingContent
               styleHeadingContent="flex-col"
               heading={
@@ -308,10 +308,12 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <ReviewSection reviewData={reviewData} windowSize={windowSize}/>
+
       {/* Section4 */}
+      <ReviewSection reviewData={reviewData} windowSize={windowSize}/>
       <Footer/>
-    </>
+      
+    </div>
   )
 }
 

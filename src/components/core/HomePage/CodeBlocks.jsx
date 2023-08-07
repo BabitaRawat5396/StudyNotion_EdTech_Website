@@ -56,7 +56,7 @@ const CodeBlocks = ({
         </div>
 
         {/* Section 2 */}
-        <div className='relative flex h-fit lg:w-4/5 text-richblack-400 bg-gradient-to-r from-[#0d20403d] to-[#06142d61] z-3'>
+        <div className='relative flex h-fit md:min-w-[300px] md-more:min-w-[325px] lg:min-w-[400px] text-richblack-400 bg-gradient-to-r from-[#0d20403d] to-[#06142d61] z-3'>
             <div className={`absolute left-2 top-5 h-[40%] w-[50%] md:h-[40%] md:w-[50%] lg:h-[50%] lg:w-[40%] ${backColor} blur-3xl rounded-full z-0`} style={{bottom:bottom,right:right}}></div>
             <div className='w-[10%] flex flex-col justify-center items-center text-sm'>
                 <p>1</p>
