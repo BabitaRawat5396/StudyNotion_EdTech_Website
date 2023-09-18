@@ -112,14 +112,16 @@ const Category = () => {
                 }
                 
                 {/* Section for frequently bought */}
-                <h1 className='mx-14 px-4 pb-3 pt-8 text-3xl sm:text-4xl text-richblue-400 border-b-2 border-blue-700'>Frequently Bought Together</h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-16 gap-8'>
-                {
-                  categoryCourses?.mostSellingCourses?.slice(0,6).map((course, index) => (
-                    <CourseCard course={course} key={index} customStyle={" lg:h-96 lg:w-[23rem]"}/>
-                  ))
-                }
-                </div>  
+                <h1 className='mx-14 px-4 pb-3 pt-8 text-3xl sm:text-4xl text-start text-richblue-400 border-b-2 border-blue-700'>Frequently Bought Together</h1>
+                <div className='w-full xl:w-11/12 flex flex-col justify-center items-center'>
+                  <div className='w-9/12 xs-more:w-7/12 sm:w-6/12 md:w-11/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 xl:gap-32 py-10 xl:py-20'>
+                  {
+                    categoryCourses?.mostSellingCourses?.slice(0,6).map((course, index) => (
+                      <CourseCard course={course} key={index} isSlider={false} customStyle={" w-full lg:h-96 lg:w-[23rem]"}/>
+                    ))
+                  }
+                  </div> 
+                </div> 
               <div>
             </div>
           </div>

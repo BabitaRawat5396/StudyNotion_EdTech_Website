@@ -42,7 +42,7 @@ const CourseSlider = ({courses}) => {
           courses?.map( (course) => (
             course && (
                 <SwiperSlide key={course._id}>
-                  <CourseCard course={course} customStyle={"h-[25rem] w-[25rem]"}/>
+                  <CourseCard course={course} isSlider={true} customStyle={"h-[25rem] w-[20rem]"}/>
                 </SwiperSlide>
               )          
           ))

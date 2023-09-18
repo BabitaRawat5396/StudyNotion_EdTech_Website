@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "../../../slices/courseSlice";
 
 
-const CourseCard = ({course,customStyle}) => {
+const CourseCard = ({course,customStyle,isSlider}) => {
   
   const [ratingCount,setRatingCount] = useState(0);
   const dispatch = useDispatch();
@@ -22,12 +22,12 @@ const CourseCard = ({course,customStyle}) => {
 },[course])
 
   return (
-    <div className={`${customStyle}` }>
+    <div className={`${customStyle} ${ isSlider ? "" : "w-full" }` }>
     {
       course && 
       <Link  to={`/courses/${course._id}`}>
         <div className="flex flex-col gap-5">
-          <img src={course?.thumbnail} alt={`${course?.courseName}`} className=" h-[10rem] object-fit aspect-square w-96 rounded-xl"/>
+          <img src={course?.thumbnail} alt={`${course?.courseName}`} className={`${isSlider ? "h-[25rem] md:h-[15rem] w-96" : "h-[12rem] md:h-[14rem] w-full md:w-11/12 xl:h-[13rem]"} object-fit aspect-square rounded-xl`}/>
           <div className="flex flex-col gap-2">
             <h1 className=" text-xl text-blue-300 font-semibold">{course.courseName}</h1>
             <p className="text-richblack-100 text-sm">Instructor : {course?.instructor?.firstName} {course?.instructor?.lastName}</p>

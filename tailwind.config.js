@@ -3,13 +3,15 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
+      'xxs':'375px',
       'xs':'430px',
       'xs-more': '520px',
       'sm': '640px',
+      'sm-more': '720px',
       'md': '768px',
       'md-more':'885px',
       'lg': '1024px',
-      'xl': '1280px',
+      'xl': '1280px', 
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
