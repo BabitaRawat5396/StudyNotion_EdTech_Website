@@ -33,19 +33,19 @@ app.use(express.json());
 app.use(cookieParser());
 
 // using cors middleware for cross origin resource sharing between server port and frontend port
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true,
-  })
-);
-
 // app.use(
 //   cors({
-//     origin: "https://studynotion-edtech-website.vercel.app",
+//     origin: "http://localhost:3000",
 //     credentials: true,
 //   })
 // );
+
+app.use(
+  cors({
+    origin: "https://studynotion-edtech-website.vercel.app",
+    credentials: true,
+  })
+);
 
 // middleware for uploading using temp file
 app.use(
