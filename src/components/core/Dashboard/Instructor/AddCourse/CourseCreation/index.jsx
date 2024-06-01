@@ -115,7 +115,6 @@ const CourseCreation = () => {
       setLoading(true)
       const categories = await fetchCategories()
       if (categories.length > 0) {
-        console.log("categories", categories)
         setCourseCategories(categories)
       }
       setLoading(false)
