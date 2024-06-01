@@ -3,6 +3,7 @@ const { mailSender } = require("../utils/mailSender");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const validator = require("validator");
+const { resetPassword } = require("../mail/templates/resetPasswordtemplate");
 
 //reset Password token
 exports.resetPasswordToken = async (req, res) => {
@@ -37,11 +38,7 @@ exports.resetPasswordToken = async (req, res) => {
     const url = `https://studynotion-edtech-website.vercel.app/update-password/${token}`;
 
     //send link to the mail
-    await mailSender(
-      email,
-      "Reset Password Link",
-      `Password Reset Link : ${url}`
-    );
+    await mailSender(email, "Reset Password Link", resetPassword(url));
 
     res.json({
       success: true,

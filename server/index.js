@@ -40,7 +40,6 @@ app.use(cookieParser());
 //   })
 // );
 
-
 app.use(
   cors({
     origin: "https://studynotion-edtech-website.vercel.app",
