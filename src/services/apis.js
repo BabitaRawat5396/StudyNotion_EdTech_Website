@@ -1,4 +1,5 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL
+// const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = "http://localhost:4000/api/v1";
 
 // AUTH ENDPOINTS
 export const endpoints = {
@@ -7,7 +8,7 @@ export const endpoints = {
   LOGIN_API: BASE_URL + "/auth/login",
   RESETPASSTOKEN_API: BASE_URL + "/auth/reset-password-token",
   RESETPASSWORD_API: BASE_URL + "/auth/reset-password",
-}
+};
 
 // PROFILE ENDPOINTS
 export const profileEndpoints = {
@@ -16,14 +17,14 @@ export const profileEndpoints = {
   DELETE_USER_ENROLLED_COURSES_API: BASE_URL + "/profile/deleteEnrolledCourses",
   UPDATE_USER_COURSE_PROGRESS_API: BASE_URL + "/profile/updateCourseProgress",
   GET_INSTRUCTOR_DATA_API: BASE_URL + "/profile/instructorDashboard",
-}
+};
 
 // PAYMENT ENDPOINTS
 export const paymentEndpoints = {
   COURSE_PAYMENT_API: BASE_URL + "/payment/capturePayment",
   COURSE_VERIFY_API: BASE_URL + "/payment/verifyPayment",
   SEND_PAYMENT_SUCCESS_EMAIL_API: BASE_URL + "/payment/sendPaymentSuccessEmail",
-}
+};
 
 // COURSE ENDPOINTS
 export const courseEndpoints = {
@@ -40,33 +41,36 @@ export const courseEndpoints = {
   DELETE_SECTION_API: BASE_URL + "/course/deleteSection",
   DELETE_SUBSECTION_API: BASE_URL + "/course/deleteSubSection",
   DELETE_COURSE_API: BASE_URL + "/course/deleteCourse",
-  GET_FULL_COURSE_DETAILS_AUTHENTICATED: BASE_URL + "/course/getFullCourseDetails",
+  GET_FULL_COURSE_DETAILS_AUTHENTICATED:
+    BASE_URL + "/course/getFullCourseDetails",
   LECTURE_COMPLETION_API: BASE_URL + "/course/updateCourseProgress",
   CREATE_RATING_API: BASE_URL + "/course/createRating",
-}
+};
 
 // RATINGS AND REVIEWS
 export const ratingsEndpoints = {
   CREATE_RATINGS_REVIEWS_API: BASE_URL + "/course/createRating",
   UPDATE_RATINGS_REVIEWS_API: BASE_URL + "/course/updateRating",
-  GET_RATINGS_REVIEWS_COURSE_SPECIFIC_API: BASE_URL + "/course/getReviewsOfCourse",
+  GET_RATINGS_REVIEWS_COURSE_SPECIFIC_API:
+    BASE_URL + "/course/getReviewsOfCourse",
   GET_ALL_REVIEWS_DETAILS_API: BASE_URL + "/course/getReviews",
-  REVIEWS_SPECIFIC_COURSE_USER_API: BASE_URL + "/course/getRatingReviewSpecificCourse",
-}
+  REVIEWS_SPECIFIC_COURSE_USER_API:
+    BASE_URL + "/course/getRatingReviewSpecificCourse",
+};
 
 // CATAGORIES API
 export const categories = {
   CATEGORIES_API: BASE_URL + "/course/showAllCategories",
-}
+};
 
 // CATALOG PAGE DATA
 export const catalogData = {
   CATALOGPAGEDATA_API: BASE_URL + "/course/getCategoryPageDetails",
-}
+};
 // CONTACT-US API
 export const contactusEndpoint = {
   CONTACT_US_API: BASE_URL + "/reach/contact",
-}
+};
 
 // SETTINGS PAGE API
 export const settingsEndpoints = {
@@ -74,4 +78,4 @@ export const settingsEndpoints = {
   UPDATE_PROFILE_API: BASE_URL + "/profile/updateProfile",
   CHANGE_PASSWORD_API: BASE_URL + "/auth/changepassword",
   DELETE_PROFILE_API: BASE_URL + "/profile/deleteProfile",
-}
+};

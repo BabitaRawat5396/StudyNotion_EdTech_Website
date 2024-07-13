@@ -31,12 +31,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git"
+    "url": "https://github.com/BabitaRawat5396/StudyNotion_EdTech_Website.git"
   },
-  "author": "Pranay Gupta",
-  "bugs": {
-    "url": "https://github.com/thepranaygupta/react-tailwind-css-starter-pack/issues"
-  },
+  "author": "Babita Rawat",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
