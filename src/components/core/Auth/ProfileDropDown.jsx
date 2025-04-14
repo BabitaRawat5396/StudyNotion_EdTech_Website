@@ -1,27 +1,26 @@
-import { useRef, useState } from "react"
-import { AiOutlineCaretDown } from "react-icons/ai"
-import { VscDashboard, VscSignOut } from "react-icons/vsc"
-import { useDispatch, useSelector } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
-import { logout } from "../../../services/operations/authAPI"
-import useOnClickOutside from "../../../hooks/useOnClickOutside"
-import ConfirmationModal from "../../common/ConfirmationModal"
-
+import { useRef, useState } from "react";
+import { AiOutlineCaretDown } from "react-icons/ai";
+import { VscDashboard, VscSignOut } from "react-icons/vsc";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../../../services/operations/authAPI";
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
+import ConfirmationModal from "../../common/ConfirmationModal";
 
 export default function ProfileDropdown() {
-  const [confirmationModal, setConfirmationModal] = useState(null)
+  const [confirmationModal, setConfirmationModal] = useState(null);
   const { user } = useSelector((state) => state.profile);
-  const [open, setOpen] = useState(false)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const ref = useRef(null)
-  let image =null;
+  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const ref = useRef(null);
+  let image = null;
 
-  if(!user.imageUrl){
-    image=`http://api.dicebear.com/5.x/initials/svg?seed=${user.firstName} ${user.lastName}`;
+  if (!user?.imageUrl) {
+    image = `http://api.dicebear.com/5.x/initials/svg?seed=${user?.firstName} ${user?.lastName}`;
   }
 
-  useOnClickOutside(ref, () => setOpen(false))
+  useOnClickOutside(ref, () => setOpen(false));
 
   if (!user) return null;
 
@@ -56,9 +55,8 @@ export default function ProfileDropdown() {
                 btn2Text: "Cancel",
                 btn1Handler: () => dispatch(logout(navigate)),
                 btn2Handler: () => setConfirmationModal(null),
-              })
+              });
               setOpen(false);
-              
             }}
             className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25"
           >
@@ -67,7 +65,7 @@ export default function ProfileDropdown() {
           </div>
         </div>
       )}
-      {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}  
+      {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
     </div>
-  )
+  );
 }
