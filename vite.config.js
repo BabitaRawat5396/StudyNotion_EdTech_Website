@@ -14,6 +14,11 @@ export default defineConfig({
       plugins: [rollupNodePolyFill()],
     },
   },
+  resolve: {
+    alias: {
+      buffer: "buffer",
+    },
+  },
   define: {
     global: "globalThis",
   },

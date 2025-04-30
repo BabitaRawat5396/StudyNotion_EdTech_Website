@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./reducer/index";
 import { Toaster } from "react-hot-toast";
+import { Buffer } from "buffer";
+window.Buffer = Buffer;
 
 const store = configureStore({
   reducer: rootReducer,
