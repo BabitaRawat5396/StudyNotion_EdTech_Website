@@ -3,15 +3,15 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
-      'xxs':'375px',
-      'xs':'430px',
-      'xs-more': '520px',
-      'sm': '640px',
-      'sm-more': '720px',
-      'md': '768px',
-      'md-more':'885px',
-      'lg': '1024px',
-      'xl': '1280px', 
+      xxs: "375px",
+      xs: "430px",
+      "xs-more": "520px",
+      sm: "640px",
+      "sm-more": "720px",
+      md: "768px",
+      "md-more": "885px",
+      lg: "1024px",
+      xl: "1280px",
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
@@ -137,26 +137,26 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'dancing-script': ['"Dancing Script"', 'cursive'],
+        "dancing-script": ['"Dancing Script"', "cursive"],
       },
       boxShadow: {
-        'inset-white': 'inset 0px -1px 0px rgba(255, 255, 255, 0.18)',
-        'lg': ' 15px rgba(0, 0, 0)',
-        'top-left': '-10px -10px 60px 30px', // Set the shadow for top and left sides
-        'bottom-right1-md': '15px 15px 3px 2px', // Set the shadow for right and bottom sides,
-        'bottom-right1-sm': '6px 6px 3px 2px', // Set the shadow for right and bottom sides
-        'bottom-right2': '10px 10px 1px 3px',
-        'aboutUsTop':'-1px -1px 10px 1px'
+        "inset-white": "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
+        lg: " 15px rgba(0, 0, 0)",
+        "top-left": "-10px -10px 60px 30px", // Set the shadow for top and left sides
+        "bottom-right1-md": "15px 15px 3px 2px", // Set the shadow for right and bottom sides,
+        "bottom-right1-sm": "6px 6px 3px 2px", // Set the shadow for right and bottom sides
+        "bottom-right2": "10px 10px 1px 3px",
+        aboutUsTop: "-1px -1px 10px 1px",
       },
       maxWidth: {
         maxContent: "1260px",
-        maxContentTab: "650px"
+        maxContentTab: "650px",
       },
     },
   },
   plugins: [
-    require('postcss-nested'),
-    require('tailwindcss'),
-    require('autoprefixer'),
+    require("postcss-nested"),
+    require("tailwindcss"),
+    require("autoprefixer"),
   ],
 };

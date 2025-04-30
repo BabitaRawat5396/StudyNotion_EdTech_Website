@@ -26,7 +26,6 @@ const Home = () => {
   useEffect(() => {
     const getReviewsRating = async () => {
       const res = await getAllRatingsReview();
-      console.log("Res", res);
       setReviewData(res);
     };
     getReviewsRating();

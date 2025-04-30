@@ -7,6 +7,7 @@
     "@ramonak/react-progress-bar": "^5.0.3",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
+    "buffer": "^6.0.3",
     "chart.js": "^4.3.0",
     "concurrently": "^8.0.1",
     "postcss-nested": "^6.0.1",
@@ -21,12 +22,13 @@
     "react-rating-stars-component": "^2.2.0",
     "react-redux": "^8.0.7",
     "react-router-dom": "^6.11.2",
-    "react-scripts": "5.0.1",
     "react-super-responsive-table": "^5.2.1",
     "react-type-animation": "^3.0.1",
     "redux-toolkit": "^1.1.2",
+    "source-map-explorer": "^2.5.3",
     "swiper": "^9.4.1",
     "video-react": "^0.16.0",
+    "vite-plugin-env-compatible": "^2.0.1",
     "web-vitals": "^2.1.4"
   },
   "repository": {
@@ -35,9 +37,8 @@
   },
   "author": "Babita Rawat",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "vite build",
     "server": "cd server && npm run dev",
     "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run server\""
   },
@@ -60,6 +61,12 @@
     ]
   },
   "devDependencies": {
-    "tailwindcss": "^3.2.7"
+    "@tailwindcss/vite": "^4.1.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.2.6"
   }
 }
