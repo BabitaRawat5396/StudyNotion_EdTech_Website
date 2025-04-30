@@ -10,6 +10,7 @@ export default defineConfig({
     include: ["buffer", "process"],
   },
   build: {
+    outDir: "build",
     rollupOptions: {
       plugins: [rollupNodePolyFill()],
     },
